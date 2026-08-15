@@ -1,0 +1,2189 @@
+{
+ "version": 2,
+ "units": [
+  {
+   "id": "u1",
+   "icon": "👋",
+   "title_fa": "سلام و آشنایی",
+   "title_en": "Greetings",
+   "grammar": {
+    "title_fa": "معرفی خودمان: I am …",
+    "body_fa": "در انگلیسی برای معرفی خودتان می‌گویید My name is … یعنی «اسم من … است». برای گفتن حال و وضعیت خودتان از I am استفاده می‌کنید: I am happy یعنی «من خوشحالم». I یعنی «من» و همیشه با حرف بزرگ نوشته می‌شود.",
+    "examples": [
+     {
+      "id": "g_u1_1",
+      "en": "My name is Maryam.",
+      "fa": "اسم من مریم است."
+     },
+     {
+      "id": "g_u1_2",
+      "en": "I am happy.",
+      "fa": "من خوشحالم."
+     },
+     {
+      "id": "g_u1_3",
+      "en": "I am from Iran.",
+      "fa": "من اهل ایران هستم."
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u1l1",
+     "cards": [
+      "hello",
+      "goodbye",
+      "yes",
+      "no",
+      "please"
+     ]
+    },
+    {
+     "id": "u1l2",
+     "cards": [
+      "thank-you",
+      "sorry",
+      "good-morning",
+      "good-night"
+     ]
+    },
+    {
+     "id": "u1l3",
+     "cards": [
+      "welcome",
+      "how-are-you",
+      "nice-to-meet-you",
+      "excuse-me"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u2",
+   "icon": "👨‍👩‍👧",
+   "title_fa": "خانواده",
+   "title_en": "Family",
+   "grammar": {
+    "title_fa": "مالِ من، مالِ شما: my و your",
+    "body_fa": "my یعنی «مالِ من» و your یعنی «مالِ شما». این کلمه‌ها قبل از اسم می‌آیند: my son یعنی «پسرِ من» و your daughter یعنی «دخترِ شما». به همین سادگی!",
+    "examples": [
+     {
+      "id": "g_u2_1",
+      "en": "My son lives in Canada.",
+      "fa": "پسرم در کانادا زندگی می‌کند."
+     },
+     {
+      "id": "g_u2_2",
+      "en": "This is my husband.",
+      "fa": "این شوهر من است."
+     },
+     {
+      "id": "g_u2_3",
+      "en": "Your daughter is very kind.",
+      "fa": "دخترِ شما خیلی مهربان است."
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u2l1",
+     "cards": [
+      "mother",
+      "father",
+      "son",
+      "daughter",
+      "brother"
+     ]
+    },
+    {
+     "id": "u2l2",
+     "cards": [
+      "sister",
+      "husband",
+      "wife",
+      "child"
+     ]
+    },
+    {
+     "id": "u2l3",
+     "cards": [
+      "baby",
+      "friend",
+      "grandmother",
+      "grandfather"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u3",
+   "icon": "🔢",
+   "title_fa": "عددها",
+   "title_en": "Numbers",
+   "grammar": {
+    "title_fa": "بیشتر از یکی: جمع با s",
+    "body_fa": "در انگلیسی وقتی چیزی بیشتر از یکی باشد، آخر کلمه یک s می‌آید: one apple یعنی «یک سیب» ولی two apples یعنی «دو سیب». برای پرسیدن تعداد می‌گوییم How many یعنی «چند تا؟».",
+    "examples": [
+     {
+      "id": "g_u3_1",
+      "en": "I have two sons.",
+      "fa": "من دو پسر دارم."
+     },
+     {
+      "id": "g_u3_2",
+      "en": "Three apples, please.",
+      "fa": "لطفاً سه سیب."
+     },
+     {
+      "id": "g_u3_3",
+      "en": "How many children do you have?",
+      "fa": "چند تا بچه دارید؟"
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u3l1",
+     "cards": [
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six"
+     ]
+    },
+    {
+     "id": "u3l2",
+     "cards": [
+      "seven",
+      "eight",
+      "nine",
+      "ten",
+      "hundred"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u4",
+   "icon": "🏠",
+   "title_fa": "خانه و وسایل",
+   "title_en": "Home",
+   "grammar": {
+    "title_fa": "این و آن: this و that",
+    "body_fa": "this یعنی «این» (برای چیز نزدیک) و that یعنی «آن» (برای چیز دور). This is a key یعنی «این یک کلید است». برای پرسیدن جای چیزی: Where is …? یعنی «… کجاست؟».",
+    "examples": [
+     {
+      "id": "g_u4_1",
+      "en": "This is my room.",
+      "fa": "این اتاق من است."
+     },
+     {
+      "id": "g_u4_2",
+      "en": "That is your chair.",
+      "fa": "آن صندلی شماست."
+     },
+     {
+      "id": "g_u4_3",
+      "en": "Where is the key?",
+      "fa": "کلید کجاست؟"
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u4l1",
+     "cards": [
+      "house",
+      "door",
+      "window",
+      "table",
+      "chair",
+      "bed"
+     ]
+    },
+    {
+     "id": "u4l2",
+     "cards": [
+      "room",
+      "key",
+      "phone",
+      "book",
+      "light",
+      "clock"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u5",
+   "icon": "🍎",
+   "title_fa": "غذا و نوشیدنی",
+   "title_en": "Food & Drink",
+   "grammar": {
+    "title_fa": "خواستن و دوست داشتن: I want و I like",
+    "body_fa": "I want یعنی «می‌خواهم» و I like یعنی «دوست دارم». بعدش اسم چیزی که می‌خواهید می‌آید: I want tea یعنی «چای می‌خواهم». در مغازه یا رستوران با please مؤدبانه‌تر می‌شود: Tea, please.",
+    "examples": [
+     {
+      "id": "g_u5_1",
+      "en": "I want water, please.",
+      "fa": "لطفاً آب می‌خواهم."
+     },
+     {
+      "id": "g_u5_2",
+      "en": "I like Persian food.",
+      "fa": "غذای ایرانی دوست دارم."
+     },
+     {
+      "id": "g_u5_3",
+      "en": "Do you want tea or coffee?",
+      "fa": "چای می‌خواهید یا قهوه؟"
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u5l1",
+     "cards": [
+      "water",
+      "bread",
+      "rice",
+      "tea",
+      "coffee"
+     ]
+    },
+    {
+     "id": "u5l2",
+     "cards": [
+      "milk",
+      "egg",
+      "meat",
+      "fruit",
+      "apple"
+     ]
+    },
+    {
+     "id": "u5l3",
+     "cards": [
+      "sugar",
+      "salt",
+      "food",
+      "breakfast"
+     ]
+    },
+    {
+     "id": "u5l4",
+     "cards": [
+      "lunch",
+      "dinner",
+      "hungry",
+      "thirsty"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u6",
+   "icon": "🕐",
+   "title_fa": "روزها و زمان",
+   "title_en": "Days & Time",
+   "grammar": {
+    "title_fa": "ساعت چند است؟ It is …",
+    "body_fa": "برای زمان و ساعت از It is استفاده می‌کنیم: It is ten یعنی «ساعت ده است». پرسیدن ساعت: What time is it? یعنی «ساعت چند است؟». کلمه‌های today (امروز)، tomorrow (فردا) معمولاً آخر جمله می‌آیند: I go today یعنی «امروز می‌روم».",
+    "examples": [
+     {
+      "id": "g_u6_1",
+      "en": "What time is it?",
+      "fa": "ساعت چند است؟"
+     },
+     {
+      "id": "g_u6_2",
+      "en": "It is ten in the morning.",
+      "fa": "ساعت دهِ صبح است."
+     },
+     {
+      "id": "g_u6_3",
+      "en": "My daughter comes tomorrow.",
+      "fa": "دخترم فردا می‌آید."
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u6l1",
+     "cards": [
+      "day",
+      "night",
+      "today",
+      "tomorrow",
+      "yesterday"
+     ]
+    },
+    {
+     "id": "u6l2",
+     "cards": [
+      "week",
+      "month",
+      "year",
+      "morning",
+      "evening"
+     ]
+    },
+    {
+     "id": "u6l3",
+     "cards": [
+      "hour",
+      "minute",
+      "now",
+      "time"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u7",
+   "icon": "🏃",
+   "title_fa": "کارهای روزمره",
+   "title_en": "Daily Verbs",
+   "grammar": {
+    "title_fa": "جمله ساختن: من می‌روم، شما می‌روید",
+    "body_fa": "در انگلیسی جمله با فاعل شروع می‌شود و بعد فعل می‌آید — برعکسِ فارسی که فعل آخر است. I eat breakfast یعنی «صبحانه می‌خورم» (کلمه به کلمه: من می‌خورم صبحانه). با I و you فعل تغییری نمی‌کند: I go / you go.",
+    "examples": [
+     {
+      "id": "g_u7_1",
+      "en": "I walk in the park every day.",
+      "fa": "هر روز در پارک قدم می‌زنم."
+     },
+     {
+      "id": "g_u7_2",
+      "en": "You speak English very well!",
+      "fa": "شما خیلی خوب انگلیسی حرف می‌زنید!"
+     },
+     {
+      "id": "g_u7_3",
+      "en": "We eat dinner at eight.",
+      "fa": "ساعت هشت شام می‌خوریم."
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u7l1",
+     "cards": [
+      "go",
+      "come",
+      "eat",
+      "drink",
+      "sleep"
+     ]
+    },
+    {
+     "id": "u7l2",
+     "cards": [
+      "see",
+      "speak",
+      "read",
+      "write",
+      "walk"
+     ]
+    },
+    {
+     "id": "u7l3",
+     "cards": [
+      "work",
+      "give",
+      "take",
+      "want",
+      "like"
+     ]
+    },
+    {
+     "id": "u7l4",
+     "cards": [
+      "know",
+      "help",
+      "open",
+      "close"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u8",
+   "icon": "✨",
+   "title_fa": "توصیف چیزها",
+   "title_en": "Adjectives",
+   "grammar": {
+    "title_fa": "توصیف کردن: It is + صفت",
+    "body_fa": "برای توصیف چیزها می‌گوییم It is و بعد صفت: It is hot یعنی «(هوا/این) گرم است». very یعنی «خیلی»: very good یعنی «خیلی خوب». صفت در انگلیسی قبل از اسم می‌آید: a big house یعنی «یک خانهٔ بزرگ».",
+    "examples": [
+     {
+      "id": "g_u8_1",
+      "en": "The tea is very hot.",
+      "fa": "چای خیلی داغ است."
+     },
+     {
+      "id": "g_u8_2",
+      "en": "It is a beautiful day.",
+      "fa": "روز قشنگی است."
+     },
+     {
+      "id": "g_u8_3",
+      "en": "English is not difficult!",
+      "fa": "انگلیسی سخت نیست!"
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u8l1",
+     "cards": [
+      "good",
+      "bad",
+      "big",
+      "small",
+      "hot"
+     ]
+    },
+    {
+     "id": "u8l2",
+     "cards": [
+      "cold",
+      "new",
+      "old",
+      "happy"
+     ]
+    },
+    {
+     "id": "u8l3",
+     "cards": [
+      "tired",
+      "beautiful",
+      "easy",
+      "difficult"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u9",
+   "icon": "🩺",
+   "title_fa": "بدن و سلامتی",
+   "title_en": "Health",
+   "grammar": {
+    "title_fa": "پیش دکتر: دردم را بگویم",
+    "body_fa": "برای گفتن درد، اسم عضو بدن + hurts می‌آید: My head hurts یعنی «سرم درد می‌کند». برای حال بد: I am sick یعنی «مریضم» و I need a doctor یعنی «دکتر لازم دارم». این جمله‌ها پیش دکتر خیلی به کار می‌آیند.",
+    "examples": [
+     {
+      "id": "g_u9_1",
+      "en": "My head hurts.",
+      "fa": "سرم درد می‌کند."
+     },
+     {
+      "id": "g_u9_2",
+      "en": "I am sick. I need a doctor.",
+      "fa": "مریضم. دکتر لازم دارم."
+     },
+     {
+      "id": "g_u9_3",
+      "en": "Take this medicine every morning.",
+      "fa": "این دارو را هر صبح بخورید."
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u9l1",
+     "cards": [
+      "head",
+      "hand",
+      "eye",
+      "foot",
+      "heart"
+     ]
+    },
+    {
+     "id": "u9l2",
+     "cards": [
+      "tooth",
+      "stomach",
+      "back",
+      "doctor",
+      "nurse"
+     ]
+    },
+    {
+     "id": "u9l3",
+     "cards": [
+      "medicine",
+      "pharmacy",
+      "sick",
+      "pain"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "icon": "🚌",
+   "title_fa": "جاها و رفت‌وآمد",
+   "title_en": "Places",
+   "grammar": {
+    "title_fa": "آدرس پرسیدن: ?…Where is",
+    "body_fa": "برای پیدا کردن جایی می‌پرسیم Where is و اسم آنجا: Where is the bank? یعنی «بانک کجاست؟». جواب‌ها را هم یاد بگیرید: on the left (سمت چپ)، on the right (سمت راست)، near (نزدیک)، far (دور). اولش excuse me بگویید تا مؤدبانه باشد.",
+    "examples": [
+     {
+      "id": "g_u10_1",
+      "en": "Excuse me, where is the station?",
+      "fa": "ببخشید، ایستگاه کجاست؟"
+     },
+     {
+      "id": "g_u10_2",
+      "en": "The pharmacy is on the right.",
+      "fa": "داروخانه سمت راست است."
+     },
+     {
+      "id": "g_u10_3",
+      "en": "It is near, not far.",
+      "fa": "نزدیک است، دور نیست."
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u10l1",
+     "cards": [
+      "home",
+      "street",
+      "hospital",
+      "school",
+      "park"
+     ]
+    },
+    {
+     "id": "u10l2",
+     "cards": [
+      "city",
+      "station",
+      "car",
+      "bus",
+      "taxi"
+     ]
+    },
+    {
+     "id": "u10l3",
+     "cards": [
+      "left",
+      "right",
+      "near",
+      "far"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "icon": "❓",
+   "title_fa": "سؤال و جواب",
+   "title_en": "Questions",
+   "grammar": {
+    "title_fa": "کلمه‌های سؤالی",
+    "body_fa": "سؤال‌ها با این کلمه‌ها شروع می‌شوند: what (چه)، who (کی)، where (کجا)، when (کِی)، why (چرا)، how (چطور). کلمهٔ سؤالی همیشه اول جمله می‌آید: What is this? یعنی «این چیست؟».",
+    "examples": [
+     {
+      "id": "g_u11_1",
+      "en": "What is your name?",
+      "fa": "اسم شما چیست؟"
+     },
+     {
+      "id": "g_u11_2",
+      "en": "Who is that man?",
+      "fa": "آن مرد کیست؟"
+     },
+     {
+      "id": "g_u11_3",
+      "en": "When do you eat lunch?",
+      "fa": "کِی ناهار می‌خورید؟"
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u11l1",
+     "cards": [
+      "what",
+      "who",
+      "where",
+      "when",
+      "why",
+      "how"
+     ]
+    },
+    {
+     "id": "u11l2",
+     "cards": [
+      "i",
+      "you",
+      "we",
+      "man",
+      "woman",
+      "name"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "icon": "🛒",
+   "title_fa": "خرید و پول",
+   "title_en": "Shopping",
+   "grammar": {
+    "title_fa": "قیمت پرسیدن: How much is it?",
+    "body_fa": "در مغازه می‌پرسید How much is it? یعنی «چند است؟». جواب با It is می‌آید: It is five dollars یعنی «پنج دلار است». برای خواستن چیزی کافی است اسمش را بگویید و please: Bread, please. به همین راحتی خرید می‌کنید!",
+    "examples": [
+     {
+      "id": "g_u12_1",
+      "en": "How much is this?",
+      "fa": "این چند است؟"
+     },
+     {
+      "id": "g_u12_2",
+      "en": "It is ten dollars.",
+      "fa": "ده دلار است."
+     },
+     {
+      "id": "g_u12_3",
+      "en": "I pay with card.",
+      "fa": "با کارت پرداخت می‌کنم."
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u12l1",
+     "cards": [
+      "money",
+      "buy",
+      "shop",
+      "market",
+      "bank"
+     ]
+    },
+    {
+     "id": "u12l2",
+     "cards": [
+      "price",
+      "cheap",
+      "expensive",
+      "pay",
+      "sell"
+     ]
+    },
+    {
+     "id": "u12l3",
+     "cards": [
+      "cash",
+      "card",
+      "bag",
+      "how-much",
+      "free"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "icon": "🆘",
+   "title_fa": "جمله‌های ضروری",
+   "title_en": "Essentials",
+   "grammar": {
+    "title_fa": "جمله‌های نجات‌بخش",
+    "body_fa": "این جمله‌ها را حفظ کنید — همه‌جا به کار می‌آیند. اگر متوجه نشدید: I don't understand. اگر تند حرف زدند: Please speak slowly. اگر کمک خواستید: Help me, please. نگران اشتباه نباشید؛ همین که تلاش کنید، مردم کمکتان می‌کنند.",
+    "examples": [
+     {
+      "id": "g_u13_1",
+      "en": "Sorry, I don't understand. Please speak slowly.",
+      "fa": "ببخشید متوجه نمی‌شوم. لطفاً آهسته صحبت کنید."
+     },
+     {
+      "id": "g_u13_2",
+      "en": "I need help, please.",
+      "fa": "لطفاً، کمک لازم دارم."
+     },
+     {
+      "id": "g_u13_3",
+      "en": "How do you say «ممنون» in English?",
+      "fa": "به انگلیسی «ممنون» چطور می‌گویند؟"
+     }
+    ]
+   },
+   "lessons": [
+    {
+     "id": "u13l1",
+     "cards": [
+      "help-me",
+      "i-dont-understand",
+      "i-dont-know",
+      "speak-slowly",
+      "repeat-please",
+      "how-do-you-say"
+     ]
+    },
+    {
+     "id": "u13l2",
+     "cards": [
+      "where-is-toilet",
+      "i-need",
+      "call",
+      "police",
+      "wait",
+      "okay"
+     ]
+    }
+   ]
+  }
+ ],
+ "cards": [
+  {
+   "id": "hello",
+   "en": "hello",
+   "fa": "سلام",
+   "example_en": "Hello! How are you?",
+   "example_fa": "سلام! حالت چطوره؟",
+   "unit": "u1"
+  },
+  {
+   "id": "goodbye",
+   "en": "goodbye",
+   "fa": "خداحافظ",
+   "example_en": "Goodbye, see you tomorrow.",
+   "example_fa": "خداحافظ، فردا می‌بینمت.",
+   "unit": "u1"
+  },
+  {
+   "id": "yes",
+   "en": "yes",
+   "fa": "بله",
+   "example_en": "Yes, I want some tea.",
+   "example_fa": "بله، کمی چای می‌خواهم.",
+   "unit": "u1"
+  },
+  {
+   "id": "no",
+   "en": "no",
+   "fa": "نه",
+   "example_en": "No, thank you.",
+   "example_fa": "نه، ممنون.",
+   "unit": "u1"
+  },
+  {
+   "id": "please",
+   "en": "please",
+   "fa": "لطفاً",
+   "example_en": "Please sit down.",
+   "example_fa": "لطفاً بنشینید.",
+   "unit": "u1"
+  },
+  {
+   "id": "thank-you",
+   "en": "thank you",
+   "fa": "ممنون",
+   "example_en": "Thank you very much.",
+   "example_fa": "خیلی ممنون.",
+   "unit": "u1"
+  },
+  {
+   "id": "sorry",
+   "en": "sorry",
+   "fa": "ببخشید",
+   "example_en": "Sorry, I am late.",
+   "example_fa": "ببخشید، دیر کردم.",
+   "unit": "u1"
+  },
+  {
+   "id": "good-morning",
+   "en": "good morning",
+   "fa": "صبح بخیر",
+   "example_en": "Good morning, Mom.",
+   "example_fa": "صبح بخیر، مامان.",
+   "unit": "u1"
+  },
+  {
+   "id": "good-night",
+   "en": "good night",
+   "fa": "شب بخیر",
+   "example_en": "Good night, sleep well.",
+   "example_fa": "شب بخیر، خوب بخواب.",
+   "unit": "u1"
+  },
+  {
+   "id": "welcome",
+   "en": "welcome",
+   "fa": "خوش آمدید",
+   "example_en": "Welcome to our home.",
+   "example_fa": "به خانهٔ ما خوش آمدید.",
+   "unit": "u1"
+  },
+  {
+   "id": "how-are-you",
+   "en": "how are you",
+   "fa": "حالت چطوره",
+   "example_en": "How are you today?",
+   "example_fa": "امروز حالت چطوره؟",
+   "unit": "u1"
+  },
+  {
+   "id": "nice-to-meet-you",
+   "en": "nice to meet you",
+   "fa": "از دیدنت خوشحالم",
+   "example_en": "Nice to meet you.",
+   "example_fa": "از دیدنت خوشحالم.",
+   "unit": "u1"
+  },
+  {
+   "id": "excuse-me",
+   "en": "excuse me",
+   "fa": "ببخشید",
+   "example_en": "Excuse me, where is the door?",
+   "example_fa": "ببخشید، در کجاست؟",
+   "unit": "u1"
+  },
+  {
+   "id": "mother",
+   "en": "mother",
+   "fa": "مادر",
+   "example_en": "My mother is kind.",
+   "example_fa": "مادرم مهربان است.",
+   "unit": "u2"
+  },
+  {
+   "id": "father",
+   "en": "father",
+   "fa": "پدر",
+   "example_en": "My father is at home.",
+   "example_fa": "پدرم خانه است.",
+   "unit": "u2"
+  },
+  {
+   "id": "son",
+   "en": "son",
+   "fa": "پسر",
+   "example_en": "Their son is a doctor.",
+   "example_fa": "پسرشان دکتر است.",
+   "unit": "u2"
+  },
+  {
+   "id": "daughter",
+   "en": "daughter",
+   "fa": "دختر",
+   "example_en": "My daughter is happy.",
+   "example_fa": "دخترم خوشحال است.",
+   "unit": "u2"
+  },
+  {
+   "id": "brother",
+   "en": "brother",
+   "fa": "برادر",
+   "example_en": "I have one brother.",
+   "example_fa": "من یک برادر دارم.",
+   "unit": "u2"
+  },
+  {
+   "id": "sister",
+   "en": "sister",
+   "fa": "خواهر",
+   "example_en": "Her sister is here.",
+   "example_fa": "خواهرش اینجاست.",
+   "unit": "u2"
+  },
+  {
+   "id": "husband",
+   "en": "husband",
+   "fa": "شوهر",
+   "example_en": "Her husband is tall.",
+   "example_fa": "شوهرش قدبلند است.",
+   "unit": "u2"
+  },
+  {
+   "id": "wife",
+   "en": "wife",
+   "fa": "همسر",
+   "example_en": "His wife is a teacher.",
+   "example_fa": "همسرش معلم است.",
+   "unit": "u2"
+  },
+  {
+   "id": "child",
+   "en": "child",
+   "fa": "بچه",
+   "example_en": "The child is sleeping.",
+   "example_fa": "بچه خوابیده است.",
+   "unit": "u2"
+  },
+  {
+   "id": "baby",
+   "en": "baby",
+   "fa": "نوزاد",
+   "example_en": "The baby is small.",
+   "example_fa": "نوزاد کوچک است.",
+   "unit": "u2"
+  },
+  {
+   "id": "friend",
+   "en": "friend",
+   "fa": "دوست",
+   "example_en": "You are my friend.",
+   "example_fa": "تو دوست من هستی.",
+   "unit": "u2"
+  },
+  {
+   "id": "grandmother",
+   "en": "grandmother",
+   "fa": "مادربزرگ",
+   "example_en": "My grandmother cooks well.",
+   "example_fa": "مادربزرگم خوب آشپزی می‌کند.",
+   "unit": "u2"
+  },
+  {
+   "id": "grandfather",
+   "en": "grandfather",
+   "fa": "پدربزرگ",
+   "example_en": "My grandfather reads books.",
+   "example_fa": "پدربزرگم کتاب می‌خواند.",
+   "unit": "u2"
+  },
+  {
+   "id": "one",
+   "en": "one",
+   "fa": "یک",
+   "example_en": "I have one apple.",
+   "example_fa": "یک سیب دارم.",
+   "unit": "u3"
+  },
+  {
+   "id": "two",
+   "en": "two",
+   "fa": "دو",
+   "example_en": "Two cups of tea.",
+   "example_fa": "دو فنجان چای.",
+   "unit": "u3"
+  },
+  {
+   "id": "three",
+   "en": "three",
+   "fa": "سه",
+   "example_en": "Three days a week.",
+   "example_fa": "سه روز در هفته.",
+   "unit": "u3"
+  },
+  {
+   "id": "four",
+   "en": "four",
+   "fa": "چهار",
+   "example_en": "Four chairs at the table.",
+   "example_fa": "چهار صندلی کنار میز.",
+   "unit": "u3"
+  },
+  {
+   "id": "five",
+   "en": "five",
+   "fa": "پنج",
+   "example_en": "Five minutes, please.",
+   "example_fa": "پنج دقیقه، لطفاً.",
+   "unit": "u3"
+  },
+  {
+   "id": "six",
+   "en": "six",
+   "fa": "شش",
+   "example_en": "Six o'clock in the evening.",
+   "example_fa": "ساعت شش عصر.",
+   "unit": "u3"
+  },
+  {
+   "id": "seven",
+   "en": "seven",
+   "fa": "هفت",
+   "example_en": "Seven days in a week.",
+   "example_fa": "هفت روز در یک هفته.",
+   "unit": "u3"
+  },
+  {
+   "id": "eight",
+   "en": "eight",
+   "fa": "هشت",
+   "example_en": "I wake up at eight.",
+   "example_fa": "ساعت هشت بیدار می‌شوم.",
+   "unit": "u3"
+  },
+  {
+   "id": "nine",
+   "en": "nine",
+   "fa": "نه",
+   "example_en": "Nine books on the shelf.",
+   "example_fa": "نه کتاب روی قفسه.",
+   "unit": "u3"
+  },
+  {
+   "id": "ten",
+   "en": "ten",
+   "fa": "ده",
+   "example_en": "Ten fingers on two hands.",
+   "example_fa": "ده انگشت روی دو دست.",
+   "unit": "u3"
+  },
+  {
+   "id": "hundred",
+   "en": "hundred",
+   "fa": "صد",
+   "example_en": "One hundred years old.",
+   "example_fa": "صد سال سن.",
+   "unit": "u3"
+  },
+  {
+   "id": "house",
+   "en": "house",
+   "fa": "خانه",
+   "example_en": "This is my house.",
+   "example_fa": "این خانهٔ من است.",
+   "unit": "u4"
+  },
+  {
+   "id": "door",
+   "en": "door",
+   "fa": "در",
+   "example_en": "Please close the door.",
+   "example_fa": "لطفاً در را ببند.",
+   "unit": "u4"
+  },
+  {
+   "id": "window",
+   "en": "window",
+   "fa": "پنجره",
+   "example_en": "Open the window.",
+   "example_fa": "پنجره را باز کن.",
+   "unit": "u4"
+  },
+  {
+   "id": "table",
+   "en": "table",
+   "fa": "میز",
+   "example_en": "The book is on the table.",
+   "example_fa": "کتاب روی میز است.",
+   "unit": "u4"
+  },
+  {
+   "id": "chair",
+   "en": "chair",
+   "fa": "صندلی",
+   "example_en": "Sit on the chair.",
+   "example_fa": "روی صندلی بنشین.",
+   "unit": "u4"
+  },
+  {
+   "id": "bed",
+   "en": "bed",
+   "fa": "تخت",
+   "example_en": "The bed is soft.",
+   "example_fa": "تخت نرم است.",
+   "unit": "u4"
+  },
+  {
+   "id": "room",
+   "en": "room",
+   "fa": "اتاق",
+   "example_en": "My room is clean.",
+   "example_fa": "اتاقم تمیز است.",
+   "unit": "u4"
+  },
+  {
+   "id": "key",
+   "en": "key",
+   "fa": "کلید",
+   "example_en": "Where is the key?",
+   "example_fa": "کلید کجاست؟",
+   "unit": "u4"
+  },
+  {
+   "id": "phone",
+   "en": "phone",
+   "fa": "تلفن",
+   "example_en": "My phone is new.",
+   "example_fa": "تلفنم نو است.",
+   "unit": "u4"
+  },
+  {
+   "id": "book",
+   "en": "book",
+   "fa": "کتاب",
+   "example_en": "I read a good book.",
+   "example_fa": "یک کتاب خوب می‌خوانم.",
+   "unit": "u4"
+  },
+  {
+   "id": "light",
+   "en": "light",
+   "fa": "چراغ",
+   "example_en": "Turn on the light.",
+   "example_fa": "چراغ را روشن کن.",
+   "unit": "u4"
+  },
+  {
+   "id": "clock",
+   "en": "clock",
+   "fa": "ساعت",
+   "example_en": "The clock is on the wall.",
+   "example_fa": "ساعت روی دیوار است.",
+   "unit": "u4"
+  },
+  {
+   "id": "water",
+   "en": "water",
+   "fa": "آب",
+   "example_en": "I drink water every day.",
+   "example_fa": "هر روز آب می‌نوشم.",
+   "unit": "u5"
+  },
+  {
+   "id": "bread",
+   "en": "bread",
+   "fa": "نان",
+   "example_en": "The bread is fresh.",
+   "example_fa": "نان تازه است.",
+   "unit": "u5"
+  },
+  {
+   "id": "rice",
+   "en": "rice",
+   "fa": "برنج",
+   "example_en": "We eat rice for lunch.",
+   "example_fa": "ناهار برنج می‌خوریم.",
+   "unit": "u5"
+  },
+  {
+   "id": "tea",
+   "en": "tea",
+   "fa": "چای",
+   "example_en": "Would you like some tea?",
+   "example_fa": "کمی چای می‌خواهی؟",
+   "unit": "u5"
+  },
+  {
+   "id": "coffee",
+   "en": "coffee",
+   "fa": "قهوه",
+   "example_en": "I drink coffee in the morning.",
+   "example_fa": "صبح قهوه می‌نوشم.",
+   "unit": "u5"
+  },
+  {
+   "id": "milk",
+   "en": "milk",
+   "fa": "شیر",
+   "example_en": "The milk is cold.",
+   "example_fa": "شیر سرد است.",
+   "unit": "u5"
+  },
+  {
+   "id": "egg",
+   "en": "egg",
+   "fa": "تخم‌مرغ",
+   "example_en": "I want two eggs.",
+   "example_fa": "دو تا تخم‌مرغ می‌خواهم.",
+   "unit": "u5"
+  },
+  {
+   "id": "meat",
+   "en": "meat",
+   "fa": "گوشت",
+   "example_en": "This meat is good.",
+   "example_fa": "این گوشت خوب است.",
+   "unit": "u5"
+  },
+  {
+   "id": "fruit",
+   "en": "fruit",
+   "fa": "میوه",
+   "example_en": "Fruit is healthy.",
+   "example_fa": "میوه سالم است.",
+   "unit": "u5"
+  },
+  {
+   "id": "apple",
+   "en": "apple",
+   "fa": "سیب",
+   "example_en": "The apple is red.",
+   "example_fa": "سیب قرمز است.",
+   "unit": "u5"
+  },
+  {
+   "id": "sugar",
+   "en": "sugar",
+   "fa": "شکر",
+   "example_en": "No sugar, please.",
+   "example_fa": "بدون شکر، لطفاً.",
+   "unit": "u5"
+  },
+  {
+   "id": "salt",
+   "en": "salt",
+   "fa": "نمک",
+   "example_en": "The soup needs salt.",
+   "example_fa": "سوپ نمک می‌خواهد.",
+   "unit": "u5"
+  },
+  {
+   "id": "food",
+   "en": "food",
+   "fa": "غذا",
+   "example_en": "The food is ready.",
+   "example_fa": "غذا آماده است.",
+   "unit": "u5"
+  },
+  {
+   "id": "breakfast",
+   "en": "breakfast",
+   "fa": "صبحانه",
+   "example_en": "Breakfast is at eight.",
+   "example_fa": "صبحانه ساعت هشت است.",
+   "unit": "u5"
+  },
+  {
+   "id": "lunch",
+   "en": "lunch",
+   "fa": "ناهار",
+   "example_en": "Lunch is ready now.",
+   "example_fa": "ناهار حالا آماده است.",
+   "unit": "u5"
+  },
+  {
+   "id": "dinner",
+   "en": "dinner",
+   "fa": "شام",
+   "example_en": "We eat dinner together.",
+   "example_fa": "شام را با هم می‌خوریم.",
+   "unit": "u5"
+  },
+  {
+   "id": "hungry",
+   "en": "hungry",
+   "fa": "گرسنه",
+   "example_en": "I am hungry.",
+   "example_fa": "من گرسنه‌ام.",
+   "unit": "u5"
+  },
+  {
+   "id": "thirsty",
+   "en": "thirsty",
+   "fa": "تشنه",
+   "example_en": "Are you thirsty?",
+   "example_fa": "تشنه‌ای؟",
+   "unit": "u5"
+  },
+  {
+   "id": "day",
+   "en": "day",
+   "fa": "روز",
+   "example_en": "Have a good day.",
+   "example_fa": "روز خوبی داشته باشی.",
+   "unit": "u6"
+  },
+  {
+   "id": "night",
+   "en": "night",
+   "fa": "شب",
+   "example_en": "The night is quiet.",
+   "example_fa": "شب آرام است.",
+   "unit": "u6"
+  },
+  {
+   "id": "today",
+   "en": "today",
+   "fa": "امروز",
+   "example_en": "Today is sunny.",
+   "example_fa": "امروز آفتابی است.",
+   "unit": "u6"
+  },
+  {
+   "id": "tomorrow",
+   "en": "tomorrow",
+   "fa": "فردا",
+   "example_en": "See you tomorrow.",
+   "example_fa": "فردا می‌بینمت.",
+   "unit": "u6"
+  },
+  {
+   "id": "yesterday",
+   "en": "yesterday",
+   "fa": "دیروز",
+   "example_en": "Yesterday was cold.",
+   "example_fa": "دیروز سرد بود.",
+   "unit": "u6"
+  },
+  {
+   "id": "week",
+   "en": "week",
+   "fa": "هفته",
+   "example_en": "I work five days a week.",
+   "example_fa": "پنج روز در هفته کار می‌کنم.",
+   "unit": "u6"
+  },
+  {
+   "id": "month",
+   "en": "month",
+   "fa": "ماه",
+   "example_en": "This month is busy.",
+   "example_fa": "این ماه پرمشغله است.",
+   "unit": "u6"
+  },
+  {
+   "id": "year",
+   "en": "year",
+   "fa": "سال",
+   "example_en": "Happy new year.",
+   "example_fa": "سال نو مبارک.",
+   "unit": "u6"
+  },
+  {
+   "id": "morning",
+   "en": "morning",
+   "fa": "صبح",
+   "example_en": "I walk in the morning.",
+   "example_fa": "صبح‌ها پیاده‌روی می‌کنم.",
+   "unit": "u6"
+  },
+  {
+   "id": "evening",
+   "en": "evening",
+   "fa": "عصر",
+   "example_en": "We talk in the evening.",
+   "example_fa": "عصرها صحبت می‌کنیم.",
+   "unit": "u6"
+  },
+  {
+   "id": "hour",
+   "en": "hour",
+   "fa": "ساعت",
+   "example_en": "Wait one hour.",
+   "example_fa": "یک ساعت صبر کن.",
+   "unit": "u6"
+  },
+  {
+   "id": "minute",
+   "en": "minute",
+   "fa": "دقیقه",
+   "example_en": "Just a minute.",
+   "example_fa": "فقط یک دقیقه.",
+   "unit": "u6"
+  },
+  {
+   "id": "now",
+   "en": "now",
+   "fa": "حالا",
+   "example_en": "Come here now.",
+   "example_fa": "حالا بیا اینجا.",
+   "unit": "u6"
+  },
+  {
+   "id": "time",
+   "en": "time",
+   "fa": "زمان",
+   "example_en": "What time is it?",
+   "example_fa": "ساعت چند است؟",
+   "unit": "u6"
+  },
+  {
+   "id": "go",
+   "en": "go",
+   "fa": "رفتن",
+   "example_en": "I go to the store.",
+   "example_fa": "به مغازه می‌روم.",
+   "unit": "u7"
+  },
+  {
+   "id": "come",
+   "en": "come",
+   "fa": "آمدن",
+   "example_en": "Please come here.",
+   "example_fa": "لطفاً بیا اینجا.",
+   "unit": "u7"
+  },
+  {
+   "id": "eat",
+   "en": "eat",
+   "fa": "خوردن",
+   "example_en": "We eat at noon.",
+   "example_fa": "ظهر غذا می‌خوریم.",
+   "unit": "u7"
+  },
+  {
+   "id": "drink",
+   "en": "drink",
+   "fa": "نوشیدن",
+   "example_en": "I drink water.",
+   "example_fa": "آب می‌نوشم.",
+   "unit": "u7"
+  },
+  {
+   "id": "sleep",
+   "en": "sleep",
+   "fa": "خوابیدن",
+   "example_en": "The baby is sleeping.",
+   "example_fa": "نوزاد خوابیده است.",
+   "unit": "u7"
+  },
+  {
+   "id": "see",
+   "en": "see",
+   "fa": "دیدن",
+   "example_en": "I see a bird.",
+   "example_fa": "یک پرنده می‌بینم.",
+   "unit": "u7"
+  },
+  {
+   "id": "speak",
+   "en": "speak",
+   "fa": "صحبت کردن",
+   "example_en": "I speak a little English.",
+   "example_fa": "کمی انگلیسی صحبت می‌کنم.",
+   "unit": "u7"
+  },
+  {
+   "id": "read",
+   "en": "read",
+   "fa": "خواندن",
+   "example_en": "She reads every night.",
+   "example_fa": "او هر شب می‌خواند.",
+   "unit": "u7"
+  },
+  {
+   "id": "write",
+   "en": "write",
+   "fa": "نوشتن",
+   "example_en": "Write your name.",
+   "example_fa": "اسمت را بنویس.",
+   "unit": "u7"
+  },
+  {
+   "id": "walk",
+   "en": "walk",
+   "fa": "راه رفتن",
+   "example_en": "We walk in the park.",
+   "example_fa": "در پارک قدم می‌زنیم.",
+   "unit": "u7"
+  },
+  {
+   "id": "work",
+   "en": "work",
+   "fa": "کار کردن",
+   "example_en": "I work at home.",
+   "example_fa": "در خانه کار می‌کنم.",
+   "unit": "u7"
+  },
+  {
+   "id": "give",
+   "en": "give",
+   "fa": "دادن",
+   "example_en": "Give me the book.",
+   "example_fa": "کتاب را به من بده.",
+   "unit": "u7"
+  },
+  {
+   "id": "take",
+   "en": "take",
+   "fa": "گرفتن",
+   "example_en": "Take this cup.",
+   "example_fa": "این فنجان را بگیر.",
+   "unit": "u7"
+  },
+  {
+   "id": "want",
+   "en": "want",
+   "fa": "خواستن",
+   "example_en": "I want some rice.",
+   "example_fa": "کمی برنج می‌خواهم.",
+   "unit": "u7"
+  },
+  {
+   "id": "like",
+   "en": "like",
+   "fa": "دوست داشتن",
+   "example_en": "I like tea.",
+   "example_fa": "چای دوست دارم.",
+   "unit": "u7"
+  },
+  {
+   "id": "know",
+   "en": "know",
+   "fa": "دانستن",
+   "example_en": "I know your name.",
+   "example_fa": "اسمت را می‌دانم.",
+   "unit": "u7"
+  },
+  {
+   "id": "help",
+   "en": "help",
+   "fa": "کمک کردن",
+   "example_en": "Can you help me?",
+   "example_fa": "می‌توانی کمکم کنی؟",
+   "unit": "u7"
+  },
+  {
+   "id": "open",
+   "en": "open",
+   "fa": "باز کردن",
+   "example_en": "Open the window.",
+   "example_fa": "پنجره را باز کن.",
+   "unit": "u7"
+  },
+  {
+   "id": "close",
+   "en": "close",
+   "fa": "بستن",
+   "example_en": "Close the door.",
+   "example_fa": "در را ببند.",
+   "unit": "u7"
+  },
+  {
+   "id": "good",
+   "en": "good",
+   "fa": "خوب",
+   "example_en": "This is good food.",
+   "example_fa": "این غذای خوبی است.",
+   "unit": "u8"
+  },
+  {
+   "id": "bad",
+   "en": "bad",
+   "fa": "بد",
+   "example_en": "The weather is bad.",
+   "example_fa": "هوا بد است.",
+   "unit": "u8"
+  },
+  {
+   "id": "big",
+   "en": "big",
+   "fa": "بزرگ",
+   "example_en": "The house is big.",
+   "example_fa": "خانه بزرگ است.",
+   "unit": "u8"
+  },
+  {
+   "id": "small",
+   "en": "small",
+   "fa": "کوچک",
+   "example_en": "The cup is small.",
+   "example_fa": "فنجان کوچک است.",
+   "unit": "u8"
+  },
+  {
+   "id": "hot",
+   "en": "hot",
+   "fa": "داغ",
+   "example_en": "The tea is hot.",
+   "example_fa": "چای داغ است.",
+   "unit": "u8"
+  },
+  {
+   "id": "cold",
+   "en": "cold",
+   "fa": "سرد",
+   "example_en": "The water is cold.",
+   "example_fa": "آب سرد است.",
+   "unit": "u8"
+  },
+  {
+   "id": "new",
+   "en": "new",
+   "fa": "نو",
+   "example_en": "I have a new phone.",
+   "example_fa": "تلفن نو دارم.",
+   "unit": "u8"
+  },
+  {
+   "id": "old",
+   "en": "old",
+   "fa": "قدیمی",
+   "example_en": "This is an old book.",
+   "example_fa": "این کتاب قدیمی است.",
+   "unit": "u8"
+  },
+  {
+   "id": "happy",
+   "en": "happy",
+   "fa": "خوشحال",
+   "example_en": "I am happy today.",
+   "example_fa": "امروز خوشحالم.",
+   "unit": "u8"
+  },
+  {
+   "id": "tired",
+   "en": "tired",
+   "fa": "خسته",
+   "example_en": "I am very tired.",
+   "example_fa": "خیلی خسته‌ام.",
+   "unit": "u8"
+  },
+  {
+   "id": "beautiful",
+   "en": "beautiful",
+   "fa": "زیبا",
+   "example_en": "The garden is beautiful.",
+   "example_fa": "باغ زیباست.",
+   "unit": "u8"
+  },
+  {
+   "id": "easy",
+   "en": "easy",
+   "fa": "آسان",
+   "example_en": "This lesson is easy.",
+   "example_fa": "این درس آسان است.",
+   "unit": "u8"
+  },
+  {
+   "id": "difficult",
+   "en": "difficult",
+   "fa": "سخت",
+   "example_en": "English is not difficult.",
+   "example_fa": "انگلیسی سخت نیست.",
+   "unit": "u8"
+  },
+  {
+   "id": "head",
+   "en": "head",
+   "fa": "سر",
+   "example_en": "My head hurts.",
+   "example_fa": "سرم درد می‌کند.",
+   "unit": "u9"
+  },
+  {
+   "id": "hand",
+   "en": "hand",
+   "fa": "دست",
+   "example_en": "Wash your hands.",
+   "example_fa": "دست‌هایت را بشوی.",
+   "unit": "u9"
+  },
+  {
+   "id": "eye",
+   "en": "eye",
+   "fa": "چشم",
+   "example_en": "Close your eyes.",
+   "example_fa": "چشم‌هایت را ببند.",
+   "unit": "u9"
+  },
+  {
+   "id": "foot",
+   "en": "foot",
+   "fa": "پا",
+   "example_en": "My foot is cold.",
+   "example_fa": "پایم سرد است.",
+   "unit": "u9"
+  },
+  {
+   "id": "heart",
+   "en": "heart",
+   "fa": "قلب",
+   "example_en": "My heart is healthy.",
+   "example_fa": "قلبم سالم است.",
+   "unit": "u9"
+  },
+  {
+   "id": "tooth",
+   "en": "tooth",
+   "fa": "دندان",
+   "example_en": "My tooth hurts.",
+   "example_fa": "دندانم درد می‌کند.",
+   "unit": "u9"
+  },
+  {
+   "id": "stomach",
+   "en": "stomach",
+   "fa": "شکم",
+   "example_en": "My stomach hurts.",
+   "example_fa": "شکمم درد می‌کند.",
+   "unit": "u9"
+  },
+  {
+   "id": "back",
+   "en": "back",
+   "fa": "کمر",
+   "example_en": "My back hurts a little.",
+   "example_fa": "کمرم کمی درد می‌کند.",
+   "unit": "u9"
+  },
+  {
+   "id": "doctor",
+   "en": "doctor",
+   "fa": "دکتر",
+   "example_en": "The doctor is kind.",
+   "example_fa": "دکتر مهربان است.",
+   "unit": "u9"
+  },
+  {
+   "id": "nurse",
+   "en": "nurse",
+   "fa": "پرستار",
+   "example_en": "The nurse is very kind.",
+   "example_fa": "پرستار خیلی مهربان است.",
+   "unit": "u9"
+  },
+  {
+   "id": "medicine",
+   "en": "medicine",
+   "fa": "دارو",
+   "example_en": "Take your medicine.",
+   "example_fa": "داروهایت را بخور.",
+   "unit": "u9"
+  },
+  {
+   "id": "pharmacy",
+   "en": "pharmacy",
+   "fa": "داروخانه",
+   "example_en": "The pharmacy is near the bank.",
+   "example_fa": "داروخانه نزدیک بانک است.",
+   "unit": "u9"
+  },
+  {
+   "id": "sick",
+   "en": "sick",
+   "fa": "مریض",
+   "example_en": "He is sick today.",
+   "example_fa": "او امروز مریض است.",
+   "unit": "u9"
+  },
+  {
+   "id": "pain",
+   "en": "pain",
+   "fa": "درد",
+   "example_en": "I have a little pain.",
+   "example_fa": "کمی درد دارم.",
+   "unit": "u9"
+  },
+  {
+   "id": "home",
+   "en": "home",
+   "fa": "خانه",
+   "example_en": "I am going home.",
+   "example_fa": "دارم به خانه می‌روم.",
+   "unit": "u10"
+  },
+  {
+   "id": "street",
+   "en": "street",
+   "fa": "خیابان",
+   "example_en": "The street is busy.",
+   "example_fa": "خیابان شلوغ است.",
+   "unit": "u10"
+  },
+  {
+   "id": "hospital",
+   "en": "hospital",
+   "fa": "بیمارستان",
+   "example_en": "The hospital is near.",
+   "example_fa": "بیمارستان نزدیک است.",
+   "unit": "u10"
+  },
+  {
+   "id": "school",
+   "en": "school",
+   "fa": "مدرسه",
+   "example_en": "The school is big.",
+   "example_fa": "مدرسه بزرگ است.",
+   "unit": "u10"
+  },
+  {
+   "id": "park",
+   "en": "park",
+   "fa": "پارک",
+   "example_en": "We sit in the park.",
+   "example_fa": "در پارک می‌نشینیم.",
+   "unit": "u10"
+  },
+  {
+   "id": "city",
+   "en": "city",
+   "fa": "شهر",
+   "example_en": "This city is quiet.",
+   "example_fa": "این شهر آرام است.",
+   "unit": "u10"
+  },
+  {
+   "id": "station",
+   "en": "station",
+   "fa": "ایستگاه",
+   "example_en": "The bus station is here.",
+   "example_fa": "ایستگاه اتوبوس اینجاست.",
+   "unit": "u10"
+  },
+  {
+   "id": "car",
+   "en": "car",
+   "fa": "ماشین",
+   "example_en": "The car is fast.",
+   "example_fa": "ماشین سریع است.",
+   "unit": "u10"
+  },
+  {
+   "id": "bus",
+   "en": "bus",
+   "fa": "اتوبوس",
+   "example_en": "I go to the market by bus.",
+   "example_fa": "با اتوبوس به بازار می‌روم.",
+   "unit": "u10"
+  },
+  {
+   "id": "taxi",
+   "en": "taxi",
+   "fa": "تاکسی",
+   "example_en": "We take a taxi to the airport.",
+   "example_fa": "با تاکسی به فرودگاه می‌رویم.",
+   "unit": "u10"
+  },
+  {
+   "id": "left",
+   "en": "left",
+   "fa": "چپ",
+   "example_en": "The shop is on the left.",
+   "example_fa": "مغازه سمت چپ است.",
+   "unit": "u10"
+  },
+  {
+   "id": "right",
+   "en": "right",
+   "fa": "راست",
+   "example_en": "Turn right at the bank.",
+   "example_fa": "کنار بانک به راست بپیچید.",
+   "unit": "u10"
+  },
+  {
+   "id": "near",
+   "en": "near",
+   "fa": "نزدیک",
+   "example_en": "The park is near our house.",
+   "example_fa": "پارک نزدیک خانهٔ ماست.",
+   "unit": "u10"
+  },
+  {
+   "id": "far",
+   "en": "far",
+   "fa": "دور",
+   "example_en": "The hospital is far from here.",
+   "example_fa": "بیمارستان از اینجا دور است.",
+   "unit": "u10"
+  },
+  {
+   "id": "what",
+   "en": "what",
+   "fa": "چه",
+   "example_en": "What is this?",
+   "example_fa": "این چیست؟",
+   "unit": "u11"
+  },
+  {
+   "id": "who",
+   "en": "who",
+   "fa": "کی",
+   "example_en": "Who is at the door?",
+   "example_fa": "کی پشت در است؟",
+   "unit": "u11"
+  },
+  {
+   "id": "where",
+   "en": "where",
+   "fa": "کجا",
+   "example_en": "Where is the key?",
+   "example_fa": "کلید کجاست؟",
+   "unit": "u11"
+  },
+  {
+   "id": "when",
+   "en": "when",
+   "fa": "کی",
+   "example_en": "When do we eat?",
+   "example_fa": "کی غذا می‌خوریم؟",
+   "unit": "u11"
+  },
+  {
+   "id": "why",
+   "en": "why",
+   "fa": "چرا",
+   "example_en": "Why are you sad?",
+   "example_fa": "چرا ناراحتی؟",
+   "unit": "u11"
+  },
+  {
+   "id": "how",
+   "en": "how",
+   "fa": "چطور",
+   "example_en": "How do you say this?",
+   "example_fa": "این را چطور می‌گویی؟",
+   "unit": "u11"
+  },
+  {
+   "id": "i",
+   "en": "I",
+   "fa": "من",
+   "example_en": "I am here.",
+   "example_fa": "من اینجا هستم.",
+   "unit": "u11"
+  },
+  {
+   "id": "you",
+   "en": "you",
+   "fa": "تو",
+   "example_en": "You are kind.",
+   "example_fa": "تو مهربانی.",
+   "unit": "u11"
+  },
+  {
+   "id": "we",
+   "en": "we",
+   "fa": "ما",
+   "example_en": "We are family.",
+   "example_fa": "ما خانواده‌ایم.",
+   "unit": "u11"
+  },
+  {
+   "id": "man",
+   "en": "man",
+   "fa": "مرد",
+   "example_en": "The man is old.",
+   "example_fa": "مرد پیر است.",
+   "unit": "u11"
+  },
+  {
+   "id": "woman",
+   "en": "woman",
+   "fa": "زن",
+   "example_en": "The woman is a doctor.",
+   "example_fa": "زن دکتر است.",
+   "unit": "u11"
+  },
+  {
+   "id": "name",
+   "en": "name",
+   "fa": "اسم",
+   "example_en": "What is your name?",
+   "example_fa": "اسمت چیست؟",
+   "unit": "u11"
+  },
+  {
+   "id": "money",
+   "en": "money",
+   "fa": "پول",
+   "example_en": "I have some money.",
+   "example_fa": "کمی پول دارم.",
+   "unit": "u12"
+  },
+  {
+   "id": "buy",
+   "en": "buy",
+   "fa": "خریدن",
+   "example_en": "I buy bread every day.",
+   "example_fa": "هر روز نان می‌خرم.",
+   "unit": "u12"
+  },
+  {
+   "id": "shop",
+   "en": "shop",
+   "fa": "مغازه",
+   "example_en": "The shop is open.",
+   "example_fa": "مغازه باز است.",
+   "unit": "u12"
+  },
+  {
+   "id": "market",
+   "en": "market",
+   "fa": "بازار",
+   "example_en": "The market is far.",
+   "example_fa": "بازار دور است.",
+   "unit": "u12"
+  },
+  {
+   "id": "bank",
+   "en": "bank",
+   "fa": "بانک",
+   "example_en": "The bank is closed.",
+   "example_fa": "بانک بسته است.",
+   "unit": "u12"
+  },
+  {
+   "id": "price",
+   "en": "price",
+   "fa": "قیمت",
+   "example_en": "The price is good.",
+   "example_fa": "قیمتش خوب است.",
+   "unit": "u12"
+  },
+  {
+   "id": "cheap",
+   "en": "cheap",
+   "fa": "ارزان",
+   "example_en": "This bag is cheap.",
+   "example_fa": "این کیسه ارزان است.",
+   "unit": "u12"
+  },
+  {
+   "id": "expensive",
+   "en": "expensive",
+   "fa": "گران",
+   "example_en": "That phone is expensive.",
+   "example_fa": "آن گوشی گران است.",
+   "unit": "u12"
+  },
+  {
+   "id": "pay",
+   "en": "pay",
+   "fa": "پرداخت کردن",
+   "example_en": "I pay with my card.",
+   "example_fa": "با کارتم پرداخت می‌کنم.",
+   "unit": "u12"
+  },
+  {
+   "id": "sell",
+   "en": "sell",
+   "fa": "فروختن",
+   "example_en": "They sell fresh bread here.",
+   "example_fa": "اینجا نان تازه می‌فروشند.",
+   "unit": "u12"
+  },
+  {
+   "id": "cash",
+   "en": "cash",
+   "fa": "پول نقد",
+   "example_en": "Do you pay with cash?",
+   "example_fa": "نقد پرداخت می‌کنید؟",
+   "unit": "u12"
+  },
+  {
+   "id": "card",
+   "en": "card",
+   "fa": "کارت",
+   "example_en": "Here is my card.",
+   "example_fa": "این کارت من است.",
+   "unit": "u12"
+  },
+  {
+   "id": "bag",
+   "en": "bag",
+   "fa": "کیسه",
+   "example_en": "A bag, please.",
+   "example_fa": "لطفاً یک کیسه.",
+   "unit": "u12"
+  },
+  {
+   "id": "how-much",
+   "en": "How much is it?",
+   "fa": "چند است؟",
+   "example_en": "How much is this apple?",
+   "example_fa": "این سیب چند است؟",
+   "unit": "u12"
+  },
+  {
+   "id": "free",
+   "en": "free",
+   "fa": "رایگان",
+   "example_en": "The water is free.",
+   "example_fa": "آب رایگان است.",
+   "unit": "u12"
+  },
+  {
+   "id": "help-me",
+   "en": "Help me, please.",
+   "fa": "لطفاً به من کمک کنید.",
+   "example_en": "Help me, please. I am lost.",
+   "example_fa": "لطفاً به من کمک کنید. گم شده‌ام.",
+   "unit": "u13"
+  },
+  {
+   "id": "i-dont-understand",
+   "en": "I don't understand.",
+   "fa": "متوجه نمی‌شوم.",
+   "example_en": "Sorry, I don't understand.",
+   "example_fa": "ببخشید، متوجه نمی‌شوم.",
+   "unit": "u13"
+  },
+  {
+   "id": "i-dont-know",
+   "en": "I don't know.",
+   "fa": "نمی‌دانم.",
+   "example_en": "I don't know this word.",
+   "example_fa": "این کلمه را نمی‌دانم.",
+   "unit": "u13"
+  },
+  {
+   "id": "speak-slowly",
+   "en": "Please speak slowly.",
+   "fa": "لطفاً آهسته صحبت کنید.",
+   "example_en": "Please speak slowly. I am learning English.",
+   "example_fa": "لطفاً آهسته صحبت کنید. دارم انگلیسی یاد می‌گیرم.",
+   "unit": "u13"
+  },
+  {
+   "id": "repeat-please",
+   "en": "Can you repeat, please?",
+   "fa": "می‌شود تکرار کنید؟",
+   "example_en": "Can you repeat, please? One more time.",
+   "example_fa": "می‌شود تکرار کنید؟ یک بار دیگر.",
+   "unit": "u13"
+  },
+  {
+   "id": "how-do-you-say",
+   "en": "How do you say…?",
+   "fa": "چطور می‌گویند…؟",
+   "example_en": "How do you say «آب» in English?",
+   "example_fa": "به انگلیسی «آب» چطور می‌گویند؟",
+   "unit": "u13"
+  },
+  {
+   "id": "where-is-toilet",
+   "en": "Where is the bathroom?",
+   "fa": "دستشویی کجاست؟",
+   "example_en": "Excuse me, where is the bathroom?",
+   "example_fa": "ببخشید، دستشویی کجاست؟",
+   "unit": "u13"
+  },
+  {
+   "id": "i-need",
+   "en": "I need…",
+   "fa": "احتیاج دارم…",
+   "example_en": "I need water, please.",
+   "example_fa": "لطفاً آب می‌خواهم، احتیاج دارم.",
+   "unit": "u13"
+  },
+  {
+   "id": "call",
+   "en": "call",
+   "fa": "زنگ زدن",
+   "example_en": "Please call my son.",
+   "example_fa": "لطفاً به پسرم زنگ بزنید.",
+   "unit": "u13"
+  },
+  {
+   "id": "police",
+   "en": "police",
+   "fa": "پلیس",
+   "example_en": "Call the police, please.",
+   "example_fa": "لطفاً به پلیس زنگ بزنید.",
+   "unit": "u13"
+  },
+  {
+   "id": "wait",
+   "en": "wait",
+   "fa": "صبر کردن",
+   "example_en": "Please wait here.",
+   "example_fa": "لطفاً اینجا صبر کنید.",
+   "unit": "u13"
+  },
+  {
+   "id": "okay",
+   "en": "okay",
+   "fa": "باشه",
+   "example_en": "Okay, thank you very much.",
+   "example_fa": "باشه، خیلی ممنون.",
+   "unit": "u13"
+  }
+ ]
+}

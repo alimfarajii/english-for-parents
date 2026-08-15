@@ -1,0 +1,22 @@
+{
+  "name": "english-for-parents-v2",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "English course for Mom & Dad (Farsi -> English), v2: units, grammar, exercises, SRS",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "course": "python3 scripts/build_course.py",
+    "audio": "python3 scripts/generate_audio.py"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^6.0.5",
+    "vite-plugin-pwa": "^0.21.1"
+  },
+  "dependencies": {
+    "@fontsource/vazirmatn": "^5.1.0"
+  }
+}
