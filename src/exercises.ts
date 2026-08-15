@@ -52,6 +52,9 @@ function builder(card: Card): Exercise | null {
     .split(/\s+/)
     .filter(Boolean);
   if (words.length < 3 || words.length > 8) return null;
+  // Skip mixed-language examples (e.g. How do you say «آب» in English?) —
+  // a Farsi tile inside an English building exercise is just confusing.
+  if (words.some((w) => /[^\x20-\x7E’‘“”…]/.test(w))) return null;
   return { kind: "build", card, tiles: words };
 }
 
