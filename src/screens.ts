@@ -1,24 +1,30 @@
 import type { Unit } from "./types";
 import { App } from "./app";
-import { el, clear, bidi, speakerBtn } from "./ui";
+import { el, clear, bidi, icon, brandMark, progressRing, speakerBtn } from "./ui";
 import { play } from "./audio";
 import { dueCards, srsStats } from "./srs";
 import { PROFILES, setCurrent, touchDay } from "./store";
 
+/** Lettered avatar medallion (mom = turquoise م, dad = lapis ب). */
+function avatar(profileId: string, cls = ""): HTMLElement {
+  const p = PROFILES.find((x) => x.id === profileId)!;
+  return el("span", { class: `avatar avatar-${p.id} ${cls}` }, p.fa.slice(0, 1));
+}
+
 // ------------------------------------------------------------------ shell
 function tabbar(app: App, active: "home" | "review" | "progress"): HTMLElement {
-  const mk = (id: typeof active, icon: string, label: string) => {
+  const mk = (id: typeof active, ic: Parameters<typeof icon>[0], label: string) => {
     const b = el("button", {
       class: `tab ${active === id ? "tab-active" : ""}`,
       type: "button",
-    }, el("span", { class: "tab-icon" }, icon), el("span", {}, label));
+    }, icon(ic), el("span", {}, label));
     b.addEventListener("click", () => app.go({ name: id }));
     return b;
   };
   return el("nav", { class: "tabbar" },
-    mk("home", "📚", "درس‌ها"),
-    mk("review", "🔁", "مرور"),
-    mk("progress", "⭐", "پیشرفت"),
+    mk("home", "book", "درس‌ها"),
+    mk("review", "repeat", "مرور"),
+    mk("progress", "star", "پیشرفت"),
   );
 }
 
@@ -34,14 +40,15 @@ export function renderProfiles(app: App): void {
   clear(app.root);
   const wrap = el("div", { class: "profiles-screen" });
   wrap.append(
-    el("div", { class: "brand-emoji" }, "🇬🇧"),
+    brandMark(96),
     el("h1", { class: "brand-title" }, "کلاس انگلیسی"),
     el("p", { class: "brand-sub" }, "کی هستید؟"),
   );
   for (const p of PROFILES) {
     const b = el("button", { class: "profile-btn", type: "button" },
-      el("span", { class: "profile-emoji" }, p.emoji),
+      avatar(p.id),
       el("span", { class: "profile-name" }, p.fa),
+      icon("chevron"),
     );
     b.addEventListener("click", () => {
       setCurrent(p.id);
@@ -62,16 +69,12 @@ export function renderHome(app: App): void {
 
   // Header: greeting + streak + daily goal ring.
   const goalPct = Math.min(100, Math.round((prof.xpToday / prof.dailyGoal) * 100));
-  const ring = el("div", {
-    class: "goal-ring",
-    style: `--pct:${goalPct}`,
-  }, el("div", { class: "goal-ring-inner" },
-    goalPct >= 100 ? "✓" : `${prof.xpToday}`));
+  const ring = progressRing(goalPct, 64, goalPct >= 100 ? "✓" : `${prof.xpToday}`);
   const header = el("header", { class: "home-header" },
     el("div", {},
-      el("div", { class: "hello" }, `سلام ${who.fa} جان ${who.emoji}`),
+      el("div", { class: "hello" }, `سلام ${who.fa} جان`),
       el("div", { class: "streak-line" },
-        `🔥 ${prof.streak} روز پشت‌سرهم`),
+        icon("flame"), `${prof.streak} روز پشت‌سرهم`),
     ),
     el("div", { class: "goal-wrap" },
       ring,
@@ -90,18 +93,18 @@ export function renderHome(app: App): void {
         el("div", { class: "continue-title" }, "ادامهٔ درس"),
         el("div", { class: "continue-sub" },
           bidi(`${nxt.unit.title_fa} — درس ${idx + 1}`))),
-      el("div", { class: "continue-go" }, "❮"),
+      el("div", { class: "continue-go" }, icon("chevron")),
     );
     cont.addEventListener("click", () =>
       app.go({ name: "lesson", unit: nxt.unit, lessonId: nxt.lessonId }));
     body.append(cont);
   } else {
     body.append(el("div", { class: "continue-card done-all" },
-      "🎓 همهٔ درس‌ها را تمام کرده‌اید! هر روز مرور کنید."));
+      icon("cap"), " همهٔ درس‌ها را تمام کرده‌اید! هر روز مرور کنید."));
   }
   if (due > 0) {
     const rev = el("button", { class: "review-chip", type: "button" },
-      `🔁 ${due} کلمه برای مرور امروز`);
+      icon("repeat"), `${due} کلمه برای مرور امروز`);
     rev.addEventListener("click", () => app.go({ name: "review" }));
     body.append(rev);
   }
@@ -116,18 +119,20 @@ export function renderHome(app: App): void {
       class: `unit-card ${unlocked ? "" : "unit-locked"} ${done === total ? "unit-done" : ""}`,
       type: "button",
     },
-      el("div", { class: "unit-icon" }, unlocked ? u.icon : "🔒"),
+      el("div", { class: "unit-icon" }, unlocked ? u.icon : icon("lock")),
       el("div", { class: "unit-info" },
         el("div", { class: "unit-title" }, u.title_fa),
         el("div", { class: "unit-progress" },
           el("div", { class: "unit-progress-fill", style: `width:${(done / total) * 100}%` })),
         el("div", { class: "unit-sub" },
-          done === total ? "کامل شد ✓" : `${done} از ${total} درس`),
+          ...(done === total
+            ? [icon("check"), "کامل شد"]
+            : [`${done} از ${total} درس`])),
       ),
     );
     card.addEventListener("click", () => {
       if (!unlocked) {
-        toast(app, "اول درس‌های قبلی را تمام کنید 🙂");
+        toast(app, "اول درس‌های قبلی را تمام کنید");
         return;
       }
       app.go({ name: "unit", unit: u });
@@ -150,12 +155,13 @@ function toast(app: App, msg: string): void {
 // ------------------------------------------------------------------ unit
 export function renderUnit(app: App, unit: Unit): void {
   const body = page(app, "home");
-  const back = el("button", { class: "back-btn", type: "button" }, "→ بازگشت");
+  const back = el("button", { class: "back-btn", type: "button" },
+    el("span", {}, "بازگشت"), icon("chevron"));
   back.addEventListener("click", () => app.go({ name: "home" }));
   body.append(back);
 
   body.append(el("div", { class: "unit-hero" },
-    el("div", { class: "unit-hero-icon" }, unit.icon),
+    el("div", { class: "unit-icon" }, unit.icon),
     el("h1", { class: "unit-hero-title" }, unit.title_fa),
     el("div", { class: "unit-hero-en", dir: "ltr" }, unit.title_en),
   ));
@@ -163,7 +169,7 @@ export function renderUnit(app: App, unit: Unit): void {
   // Grammar note.
   const g = unit.grammar;
   const gcard = el("section", { class: "grammar-card" },
-    el("div", { class: "grammar-kicker" }, "📖 نکتهٔ دستوری"),
+    el("div", { class: "grammar-kicker" }, icon("book"), "نکتهٔ دستوری"),
     el("h2", { class: "grammar-title" }, bidi(g.title_fa)),
     el("p", { class: "grammar-body" }, bidi(g.body_fa)),
   );
@@ -191,14 +197,14 @@ export function renderUnit(app: App, unit: Unit): void {
       class: `lesson-card ${doneCount ? "lesson-done" : ""} ${prevDone ? "" : "unit-locked"}`,
       type: "button",
     },
-      el("div", { class: "lesson-num" }, doneCount ? "✓" : `${i + 1}`),
+      el("div", { class: "lesson-num" }, doneCount ? icon("check") : `${i + 1}`),
       el("div", { class: "lesson-info" },
         el("div", { class: "lesson-title" }, `درس ${i + 1}`),
         el("div", { class: "lesson-words", dir: "ltr" }, names)),
     );
     b.addEventListener("click", () => {
       if (!prevDone) {
-        toast(app, "اول درس قبلی را تمام کنید 🙂");
+        toast(app, "اول درس قبلی را تمام کنید");
         return;
       }
       app.go({ name: "lesson", unit, lessonId: l.id });
@@ -218,22 +224,22 @@ export function renderProgress(app: App): void {
   const lessonsDone = app.course.units.reduce((n, u) => n + app.lessonsDone(u), 0);
 
   body.append(el("div", { class: "progress-hero" },
-    el("div", { class: "profile-emoji" }, who.emoji),
+    avatar(who.id, "avatar-lg"),
     el("h1", { class: "brand-title" }, who.fa),
   ));
 
   const grid = el("div", { class: "stats-grid" });
-  const stat = (num: string, label: string, cls = "") =>
-    el("div", { class: `stat-card ${cls}` },
-      el("div", { class: "stat-num" }, num),
+  const stat = (num: (Node | string)[], label: string) =>
+    el("div", { class: "stat-card" },
+      el("div", { class: "stat-num" }, ...num),
       el("div", { class: "stat-label" }, label));
   grid.append(
-    stat(`🔥 ${prof.streak}`, "روز پشت‌سرهم"),
-    stat(`${prof.totalXp}`, "کل امتیاز"),
-    stat(`${st.learned}`, `کلمه یادگرفته از ${st.total}`),
-    stat(`${st.mastered}`, "کلمهٔ کاملاً بلد"),
-    stat(`${lessonsDone}`, `درس تمام‌شده از ${lessonsTotal}`),
-    stat(`${st.due}`, "برای مرور امروز"),
+    stat([icon("flame"), `${prof.streak}`], "روز پشت‌سرهم"),
+    stat([`${prof.totalXp}`], "کل امتیاز"),
+    stat([`${st.learned}`], `کلمه یادگرفته از ${st.total}`),
+    stat([`${st.mastered}`], "کلمهٔ کاملاً بلد"),
+    stat([`${lessonsDone}`], `درس تمام‌شده از ${lessonsTotal}`),
+    stat([`${st.due}`], "برای مرور امروز"),
   );
   body.append(grid);
 

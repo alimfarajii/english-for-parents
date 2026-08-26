@@ -6,7 +6,7 @@ import { runSession } from "./session";
 import { buildLessonSession, buildReviewSession } from "./exercises";
 import { dueCards, MAX_REVIEW_SESSION } from "./srs";
 import { getCurrent } from "./store";
-import { el, clear } from "./ui";
+import { el, clear, icon } from "./ui";
 
 async function boot(): Promise<void> {
   const root = document.getElementById("app")!;
@@ -71,7 +71,7 @@ async function boot(): Promise<void> {
 function renderNoReview(app: App): void {
   clear(app.root);
   const wrap = el("div", { class: "done-screen" },
-    el("div", { class: "done-emoji" }, "🌤"),
+    el("div", { class: "done-medal calm" }, icon("sparkles")),
     el("h1", { class: "done-title" }, "چیزی برای مرور نیست"),
     el("div", { class: "done-sub" },
       "فعلاً همهٔ کلمه‌ها تازه‌اند. یک درس جدید شروع کنید!"),

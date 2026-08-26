@@ -1,6 +1,6 @@
 import type { Card, Exercise, SessionResult } from "./types";
 import type { App } from "./app";
-import { el, clear, bidi, speakerBtn } from "./ui";
+import { el, clear, bidi, speakerBtn, icon } from "./ui";
 import { playWord, playExample, play, sfxCorrect, sfxWrong, sfxFanfare } from "./audio";
 import { srsAnswer } from "./srs";
 import { addXp } from "./store";
@@ -63,7 +63,11 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     const pct = Math.round((done / Math.max(1, totalItems)) * 100);
     const bar = el("div", { class: "sess-bar" },
       el("div", { class: "sess-bar-fill", style: `width:${pct}%` }));
-    const close = el("button", { class: "sess-close", type: "button" }, "✕");
+    const close = el("button", {
+      class: "sess-close",
+      type: "button",
+      "aria-label": "خروج",
+    }, icon("x"));
     close.addEventListener("click", opts.onExit);
     const body = el("div", { class: "sess-body" });
     const footer = el("div", { class: "sess-footer" });
@@ -91,7 +95,9 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     clear(footer);
     const sheet = el("div", { class: `feedback ${ok ? "ok" : "bad"}` });
     sheet.append(
-      el("div", { class: "fb-title" }, ok ? "آفرین! درست است ✓" : "اشکالی ندارد!"),
+      el("div", { class: "fb-title" },
+        icon(ok ? "check" : "x"),
+        ok ? "آفرین! درست است" : "اشکالی ندارد!"),
     );
     if (!ok && correctText) {
       const row = el("div", { class: "fb-answer" }, "جواب درست: ");
@@ -124,7 +130,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
   function renderTeach(ex: Extract<Exercise, { kind: "teach" }>): void {
     const { body, footer } = shell();
     const c = ex.card;
-    body.append(el("div", { class: "ex-label" }, "کلمهٔ جدید"));
+    body.append(el("div", { class: "ex-label" }, icon("sparkles"), "کلمهٔ جدید"));
     const wordRow = el("div", { class: "teach-word" });
     wordRow.append(
       speakerBtn(() => playWord(c.id), "speaker-lg"),
@@ -152,7 +158,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     const { body, footer } = shell();
     const g = ex.unit.grammar;
     body.append(
-      el("div", { class: "ex-label" }, "نکتهٔ امروز " + ex.unit.icon),
+      el("div", { class: "ex-label" }, icon("book"), "نکتهٔ امروز"),
       el("h2", { class: "grammar-title" }, bidi(g.title_fa)),
       el("p", { class: "grammar-body" }, bidi(g.body_fa)),
     );
@@ -344,7 +350,8 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     const pctOk = scoredTotal
       ? Math.round((correctFirstTry / scoredTotal) * 100) : 100;
     wrap.append(
-      el("div", { class: "done-emoji" }, pctOk >= 80 ? "🎉" : "🌟"),
+      el("div", { class: `done-medal ${pctOk >= 80 ? "" : "calm"}` },
+        icon(pctOk >= 80 ? "medal" : "star")),
       el("h1", { class: "done-title" }, "آفرین!"),
       el("div", { class: "done-sub" }, opts.title),
       el("div", { class: "done-stats" },
@@ -355,7 +362,8 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
           el("div", { class: "done-stat-num" }, `${pctOk}٪`),
           el("div", { class: "done-stat-label" }, "درست از بار اول")),
         el("div", { class: "done-stat" },
-          el("div", { class: "done-stat-num streak" }, `${app.profile.streak} 🔥`),
+          el("div", { class: "done-stat-num streak" },
+            icon("flame"), `${app.profile.streak}`),
           el("div", { class: "done-stat-label" }, "روز پشت‌سرهم")),
       ),
     );
