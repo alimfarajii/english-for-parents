@@ -5,6 +5,7 @@ import { playWord, playExample, play, sfxCorrect, sfxWrong, sfxFanfare } from ".
 import { srsAnswer } from "./srs";
 import { addXp } from "./store";
 import { confetti } from "./confetti";
+import { t } from "./i18n";
 
 interface SessionOpts {
   title: string;
@@ -66,7 +67,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     const close = el("button", {
       class: "sess-close",
       type: "button",
-      "aria-label": "خروج",
+      "aria-label": t("exit"),
     }, icon("x"));
     close.addEventListener("click", opts.onExit);
     const body = el("div", { class: "sess-body" });
@@ -97,14 +98,14 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     sheet.append(
       el("div", { class: "fb-title" },
         icon(ok ? "check" : "x"),
-        ok ? "آفرین! درست است" : "اشکالی ندارد!"),
+        ok ? t("correctFb") : t("wrongFb")),
     );
     if (!ok && correctText) {
-      const row = el("div", { class: "fb-answer" }, "جواب درست: ");
+      const row = el("div", { class: "fb-answer" }, t("correctAnswer"));
       row.append(bidi(correctText));
       sheet.append(row);
     }
-    sheet.append(continueBtn("ادامه", ok ? "" : "btn-red", onNext));
+    sheet.append(continueBtn(t("continue"), ok ? "" : "btn-red", onNext));
     footer.append(sheet);
     (ok ? sfxCorrect : sfxWrong)();
   }
@@ -130,7 +131,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
   function renderTeach(ex: Extract<Exercise, { kind: "teach" }>): void {
     const { body, footer } = shell();
     const c = ex.card;
-    body.append(el("div", { class: "ex-label" }, icon("sparkles"), "کلمهٔ جدید"));
+    body.append(el("div", { class: "ex-label" }, icon("sparkles"), t("newWord")));
     const wordRow = el("div", { class: "teach-word" });
     wordRow.append(
       speakerBtn(() => playWord(c.id), "speaker-lg"),
@@ -150,7 +151,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
       ),
     );
     body.append(exRow);
-    footer.append(continueBtn("فهمیدم، ادامه", "", advance));
+    footer.append(continueBtn(t("gotIt"), "", advance));
     playWord(c.id);
   }
 
@@ -158,7 +159,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     const { body, footer } = shell();
     const g = ex.unit.grammar;
     body.append(
-      el("div", { class: "ex-label" }, icon("book"), "نکتهٔ امروز"),
+      el("div", { class: "ex-label" }, icon("book"), t("todaysNote")),
       el("h2", { class: "grammar-title" }, bidi(g.title_fa)),
       el("p", { class: "grammar-body" }, bidi(g.body_fa)),
     );
@@ -173,7 +174,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
       );
       body.append(row);
     }
-    footer.append(continueBtn("شروع تمرین", "", advance));
+    footer.append(continueBtn(t("startPractice"), "", advance));
   }
 
   function renderChoice(
@@ -182,9 +183,9 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     const { body, footer } = shell();
     const c = ex.card;
     const prompts: Record<string, string> = {
-      choice_fa: "معنی این کلمه چیست؟",
-      choice_en: "به انگلیسی چه می‌شود؟",
-      listen: "گوش کنید — چه شنیدید؟",
+      choice_fa: t("whatMeaning"),
+      choice_en: t("sayInEnglish"),
+      listen: t("listenWhat"),
     };
     body.append(el("div", { class: "ex-label" }, prompts[ex.kind]));
 
@@ -236,7 +237,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     const { body, footer } = shell();
     const c = ex.card;
     body.append(
-      el("div", { class: "ex-label" }, "جمله را به انگلیسی بسازید"),
+      el("div", { class: "ex-label" }, t("buildSentence")),
       el("div", { class: "prompt-fa build-fa" }, c.example_fa),
     );
     const answer = el("div", { class: "build-answer", dir: "ltr" });
@@ -244,7 +245,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     body.append(answer, pool);
 
     const chosen: { word: string; btn: HTMLElement }[] = [];
-    const checkBtn = continueBtn("بررسی", "", () => check());
+    const checkBtn = continueBtn(t("checkAnswer"), "", () => check());
     checkBtn.toggleAttribute("disabled", true);
     footer.append(checkBtn);
 
@@ -278,7 +279,7 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
 
   function renderMatch(ex: Extract<Exercise, { kind: "match" }>): void {
     const { body, footer } = shell();
-    body.append(el("div", { class: "ex-label" }, "جفت‌ها را پیدا کنید"));
+    body.append(el("div", { class: "ex-label" }, t("matchPairs")));
     const grid = el("div", { class: "match-grid" });
     body.append(grid);
 
@@ -352,22 +353,22 @@ export function runSession(app: App, exercises: Exercise[], opts: SessionOpts) {
     wrap.append(
       el("div", { class: `done-medal ${pctOk >= 80 ? "" : "calm"}` },
         icon(pctOk >= 80 ? "medal" : "star")),
-      el("h1", { class: "done-title" }, "آفرین!"),
+      el("h1", { class: "done-title" }, t("wellDone")),
       el("div", { class: "done-sub" }, opts.title),
       el("div", { class: "done-stats" },
         el("div", { class: "done-stat" },
           el("div", { class: "done-stat-num xp" }, `+${xp}`),
-          el("div", { class: "done-stat-label" }, "امتیاز")),
+          el("div", { class: "done-stat-label" }, t("xp"))),
         el("div", { class: "done-stat" },
-          el("div", { class: "done-stat-num" }, `${pctOk}٪`),
-          el("div", { class: "done-stat-label" }, "درست از بار اول")),
+          el("div", { class: "done-stat-num" }, t("pct", pctOk)),
+          el("div", { class: "done-stat-label" }, t("firstTry"))),
         el("div", { class: "done-stat" },
           el("div", { class: "done-stat-num streak" },
             icon("flame"), `${app.profile.streak}`),
-          el("div", { class: "done-stat-label" }, "روز پشت‌سرهم")),
+          el("div", { class: "done-stat-label" }, t("dayStreak"))),
       ),
     );
-    const btn = el("button", { class: "btn-primary", type: "button" }, "ادامه");
+    const btn = el("button", { class: "btn-primary", type: "button" }, t("continue"));
     btn.addEventListener("click", () =>
       opts.onFinish({ correctFirstTry, total: scoredTotal, xp }));
     wrap.append(btn);

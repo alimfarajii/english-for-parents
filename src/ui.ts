@@ -1,3 +1,5 @@
+import { t } from "./i18n";
+
 /** Tiny DOM helpers. */
 export function el<K extends keyof HTMLElementTagNameMap>(
   tag: K,
@@ -64,6 +66,9 @@ const PATHS: Record<string, string> = {
   sparkles:
     '<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/>' +
     '<path d="M19 17v4"/><path d="M17 19h4"/>',
+  globe:
+    '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/>' +
+    '<path d="M12 3a13.5 13.5 0 0 1 0 18"/><path d="M12 3a13.5 13.5 0 0 0 0 18"/>',
   cap:
     '<path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/>' +
     '<path d="M22 10v6"/><path d="M6 12.5V16c0 1.66 2.69 3 6 3s6-1.34 6-3v-3.5"/>',
@@ -95,7 +100,7 @@ export function speakerBtn(onTap: () => void, cls = ""): HTMLElement {
   const b = el("button", {
     class: `speaker ${cls}`,
     type: "button",
-    "aria-label": "پخش صدا",
+    "aria-label": t("playAudio"),
   }, icon("volume"));
   b.addEventListener("click", (e) => {
     e.stopPropagation();

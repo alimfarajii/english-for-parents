@@ -4,11 +4,28 @@ import { el, clear, bidi, icon, brandMark, progressRing, speakerBtn } from "./ui
 import { play } from "./audio";
 import { dueCards, srsStats } from "./srs";
 import { PROFILES, setCurrent, touchDay } from "./store";
+import { t, getLang, toggleLang, otherLangLabel, unitTitle, unitSubtitle } from "./i18n";
 
-/** Lettered avatar medallion (mom = turquoise م, dad = lapis ب). */
+function profileName(id: string): string {
+  const p = PROFILES.find((x) => x.id === id)!;
+  return getLang() === "fa" ? p.fa : p.en;
+}
+
+/** Lettered avatar medallion (mom = turquoise, dad = lapis). */
 function avatar(profileId: string, cls = ""): HTMLElement {
-  const p = PROFILES.find((x) => x.id === profileId)!;
-  return el("span", { class: `avatar avatar-${p.id} ${cls}` }, p.fa.slice(0, 1));
+  return el("span", { class: `avatar avatar-${profileId} ${cls}` },
+    profileName(profileId).slice(0, 1));
+}
+
+/** Quiet language switch: shows the other language's name. */
+function langBtn(onSwitched: () => void): HTMLElement {
+  const b = el("button", { class: "lang-btn", type: "button" },
+    icon("globe"), otherLangLabel());
+  b.addEventListener("click", () => {
+    toggleLang();
+    onSwitched();
+  });
+  return b;
 }
 
 // ------------------------------------------------------------------ shell
@@ -22,9 +39,9 @@ function tabbar(app: App, active: "home" | "review" | "progress"): HTMLElement {
     return b;
   };
   return el("nav", { class: "tabbar" },
-    mk("home", "book", "درس‌ها"),
-    mk("review", "repeat", "مرور"),
-    mk("progress", "star", "پیشرفت"),
+    mk("home", "book", t("lessons")),
+    mk("review", "repeat", t("review")),
+    mk("progress", "star", t("progress")),
   );
 }
 
@@ -41,13 +58,13 @@ export function renderProfiles(app: App): void {
   const wrap = el("div", { class: "profiles-screen" });
   wrap.append(
     brandMark(96),
-    el("h1", { class: "brand-title" }, "کلاس انگلیسی"),
-    el("p", { class: "brand-sub" }, "کی هستید؟"),
+    el("h1", { class: "brand-title" }, t("brandTitle")),
+    el("p", { class: "brand-sub" }, t("whoAreYou")),
   );
   for (const p of PROFILES) {
     const b = el("button", { class: "profile-btn", type: "button" },
       avatar(p.id),
-      el("span", { class: "profile-name" }, p.fa),
+      el("span", { class: "profile-name" }, profileName(p.id)),
       icon("chevron"),
     );
     b.addEventListener("click", () => {
@@ -56,6 +73,7 @@ export function renderProfiles(app: App): void {
     });
     wrap.append(b);
   }
+  wrap.append(langBtn(() => renderProfiles(app)));
   app.root.append(wrap);
 }
 
@@ -65,20 +83,19 @@ export function renderHome(app: App): void {
   app.profile = touchDay(app.profile);
   app.save();
   const prof = app.profile;
-  const who = PROFILES.find((p) => p.id === app.profileId)!;
 
   // Header: greeting + streak + daily goal ring.
   const goalPct = Math.min(100, Math.round((prof.xpToday / prof.dailyGoal) * 100));
   const ring = progressRing(goalPct, 64, goalPct >= 100 ? "✓" : `${prof.xpToday}`);
   const header = el("header", { class: "home-header" },
     el("div", {},
-      el("div", { class: "hello" }, `سلام ${who.fa} جان`),
+      el("div", { class: "hello" }, t("hello", profileName(app.profileId))),
       el("div", { class: "streak-line" },
-        icon("flame"), `${prof.streak} روز پشت‌سرهم`),
+        icon("flame"), t("streakDays", prof.streak)),
     ),
     el("div", { class: "goal-wrap" },
       ring,
-      el("div", { class: "goal-label" }, `هدف روز: ${prof.dailyGoal} امتیاز`)),
+      el("div", { class: "goal-label" }, t("dailyGoal", prof.dailyGoal))),
   );
   body.append(header);
 
@@ -87,12 +104,13 @@ export function renderHome(app: App): void {
   const due = dueCards(app.course.cards, prof).length;
   if (nxt) {
     const idx = nxt.unit.lessons.findIndex((l) => l.id === nxt.lessonId);
+    const sub = `${unitTitle(nxt.unit)} — ${t("lessonN", idx + 1)}`;
     const cont = el("button", { class: "continue-card", type: "button" },
       el("div", { class: "continue-icon" }, nxt.unit.icon),
       el("div", { class: "continue-text" },
-        el("div", { class: "continue-title" }, "ادامهٔ درس"),
+        el("div", { class: "continue-title" }, t("continueLesson")),
         el("div", { class: "continue-sub" },
-          bidi(`${nxt.unit.title_fa} — درس ${idx + 1}`))),
+          getLang() === "fa" ? bidi(sub) : sub)),
       el("div", { class: "continue-go" }, icon("chevron")),
     );
     cont.addEventListener("click", () =>
@@ -100,11 +118,11 @@ export function renderHome(app: App): void {
     body.append(cont);
   } else {
     body.append(el("div", { class: "continue-card done-all" },
-      icon("cap"), " همهٔ درس‌ها را تمام کرده‌اید! هر روز مرور کنید."));
+      icon("cap"), " " + t("allDone")));
   }
   if (due > 0) {
     const rev = el("button", { class: "review-chip", type: "button" },
-      icon("repeat"), `${due} کلمه برای مرور امروز`);
+      icon("repeat"), t("reviewToday", due));
     rev.addEventListener("click", () => app.go({ name: "review" }));
     body.append(rev);
   }
@@ -121,34 +139,34 @@ export function renderHome(app: App): void {
     },
       el("div", { class: "unit-icon" }, unlocked ? u.icon : icon("lock")),
       el("div", { class: "unit-info" },
-        el("div", { class: "unit-title" }, u.title_fa),
+        el("div", { class: "unit-title" }, unitTitle(u)),
         el("div", { class: "unit-progress" },
           el("div", { class: "unit-progress-fill", style: `width:${(done / total) * 100}%` })),
         el("div", { class: "unit-sub" },
           ...(done === total
-            ? [icon("check"), "کامل شد"]
-            : [`${done} از ${total} درس`])),
+            ? [icon("check"), t("complete")]
+            : [t("ofLessons", done, total)])),
       ),
     );
     card.addEventListener("click", () => {
       if (!unlocked) {
-        toast(app, "اول درس‌های قبلی را تمام کنید");
+        toast(app, t("finishEarlier"));
         return;
       }
       app.go({ name: "unit", unit: u });
     });
     list.append(card);
   }
-  body.append(el("h2", { class: "section-title" }, "درس‌ها"), list);
+  body.append(el("h2", { class: "section-title" }, t("lessons")), list);
 }
 
 function toast(app: App, msg: string): void {
-  const t = el("div", { class: "toast" }, msg);
-  app.root.append(t);
-  setTimeout(() => t.classList.add("toast-show"), 10);
+  const tst = el("div", { class: "toast" }, msg);
+  app.root.append(tst);
+  setTimeout(() => tst.classList.add("toast-show"), 10);
   setTimeout(() => {
-    t.classList.remove("toast-show");
-    setTimeout(() => t.remove(), 300);
+    tst.classList.remove("toast-show");
+    setTimeout(() => tst.remove(), 300);
   }, 2200);
 }
 
@@ -156,20 +174,23 @@ function toast(app: App, msg: string): void {
 export function renderUnit(app: App, unit: Unit): void {
   const body = page(app, "home");
   const back = el("button", { class: "back-btn", type: "button" },
-    el("span", {}, "بازگشت"), icon("chevron"));
+    el("span", {}, t("back")), icon("chevron"));
   back.addEventListener("click", () => app.go({ name: "home" }));
   body.append(back);
 
   body.append(el("div", { class: "unit-hero" },
     el("div", { class: "unit-icon" }, unit.icon),
-    el("h1", { class: "unit-hero-title" }, unit.title_fa),
-    el("div", { class: "unit-hero-en", dir: "ltr" }, unit.title_en),
+    el("h1", { class: "unit-hero-title" }, unitTitle(unit)),
+    el("div", {
+      class: "unit-hero-en",
+      dir: getLang() === "fa" ? "ltr" : "rtl",
+    }, unitSubtitle(unit)),
   ));
 
-  // Grammar note.
+  // Grammar note (content itself is part of the course — always Farsi).
   const g = unit.grammar;
   const gcard = el("section", { class: "grammar-card" },
-    el("div", { class: "grammar-kicker" }, icon("book"), "نکتهٔ دستوری"),
+    el("div", { class: "grammar-kicker" }, icon("book"), t("grammarNote")),
     el("h2", { class: "grammar-title" }, bidi(g.title_fa)),
     el("p", { class: "grammar-body" }, bidi(g.body_fa)),
   );
@@ -179,7 +200,7 @@ export function renderUnit(app: App, unit: Unit): void {
       speakerBtn(() => play(gx.id)),
       el("div", {},
         el("div", { class: "teach-ex-en", dir: "ltr" }, gx.en),
-        el("div", { class: "teach-ex-fa" }, gx.fa)),
+        el("div", { class: "teach-ex-fa", dir: "rtl" }, gx.fa)),
     );
     gcard.append(row);
   }
@@ -199,33 +220,32 @@ export function renderUnit(app: App, unit: Unit): void {
     },
       el("div", { class: "lesson-num" }, doneCount ? icon("check") : `${i + 1}`),
       el("div", { class: "lesson-info" },
-        el("div", { class: "lesson-title" }, `درس ${i + 1}`),
+        el("div", { class: "lesson-title" }, t("lessonN", i + 1)),
         el("div", { class: "lesson-words", dir: "ltr" }, names)),
     );
     b.addEventListener("click", () => {
       if (!prevDone) {
-        toast(app, "اول درس قبلی را تمام کنید");
+        toast(app, t("finishPrev"));
         return;
       }
       app.go({ name: "lesson", unit, lessonId: l.id });
     });
     list.append(b);
   });
-  body.append(el("h2", { class: "section-title" }, "درس‌ها"), list);
+  body.append(el("h2", { class: "section-title" }, t("lessons")), list);
 }
 
 // -------------------------------------------------------------- progress
 export function renderProgress(app: App): void {
   const body = page(app, "progress");
   const prof = app.profile;
-  const who = PROFILES.find((p) => p.id === app.profileId)!;
   const st = srsStats(app.course.cards, prof);
   const lessonsTotal = app.course.units.reduce((n, u) => n + u.lessons.length, 0);
   const lessonsDone = app.course.units.reduce((n, u) => n + app.lessonsDone(u), 0);
 
   body.append(el("div", { class: "progress-hero" },
-    avatar(who.id, "avatar-lg"),
-    el("h1", { class: "brand-title" }, who.fa),
+    avatar(app.profileId, "avatar-lg"),
+    el("h1", { class: "brand-title" }, profileName(app.profileId)),
   ));
 
   const grid = el("div", { class: "stats-grid" });
@@ -234,20 +254,21 @@ export function renderProgress(app: App): void {
       el("div", { class: "stat-num" }, ...num),
       el("div", { class: "stat-label" }, label));
   grid.append(
-    stat([icon("flame"), `${prof.streak}`], "روز پشت‌سرهم"),
-    stat([`${prof.totalXp}`], "کل امتیاز"),
-    stat([`${st.learned}`], `کلمه یادگرفته از ${st.total}`),
-    stat([`${st.mastered}`], "کلمهٔ کاملاً بلد"),
-    stat([`${lessonsDone}`], `درس تمام‌شده از ${lessonsTotal}`),
-    stat([`${st.due}`], "برای مرور امروز"),
+    stat([icon("flame"), `${prof.streak}`], t("dayStreak")),
+    stat([`${prof.totalXp}`], t("totalXp")),
+    stat([`${st.learned}`], t("wordsLearned", st.total)),
+    stat([`${st.mastered}`], t("wordsMastered")),
+    stat([`${lessonsDone}`], t("lessonsDoneStat", lessonsTotal)),
+    stat([`${st.due}`], t("dueToday")),
   );
   body.append(grid);
 
   const switchBtn = el("button", { class: "btn-secondary", type: "button" },
-    "عوض کردن کاربر");
+    t("switchUser"));
   switchBtn.addEventListener("click", () => {
     setCurrent(null);
     app.go({ name: "profiles" });
   });
   body.append(switchBtn);
+  body.append(langBtn(() => renderProgress(app)));
 }

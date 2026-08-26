@@ -72,8 +72,9 @@ button:focus-visible {
 }
 
 /* English learning content is set in Andika — SIL's literacy face,
-   designed for beginner readers (unambiguous a/g/I/l letterforms). */
-[dir="ltr"] { font-family: var(--font-en); }
+   designed for beginner readers (unambiguous a/g/I/l letterforms).
+   Scoped to content classes so English UI chrome stays in Vazirmatn. */
+.teach-en, .prompt-en, .option[dir="ltr"], .tile { font-family: var(--font-en); }
 
 .en-inline {
   font-family: var(--font-en);
@@ -228,6 +229,26 @@ button:focus-visible {
 .profile-name { font-size: 28px; font-weight: 800; }
 .profile-btn .icon { margin-inline-start: auto; color: var(--line-strong); }
 
+/* Quiet language switch (profiles + progress screens). */
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: center;
+  min-height: 48px;
+  margin-top: 14px;
+  padding: 8px 22px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.lang-btn .icon svg { width: 20px; height: 20px; }
+.page .lang-btn { display: flex; margin-inline: auto; }
+
 /* Lettered avatar medallions (mom = turquoise, dad = lapis). */
 .avatar {
   width: 60px; height: 60px;
@@ -278,7 +299,7 @@ button:focus-visible {
   color: var(--primary-ink);
   border-radius: var(--radius-lg);
   padding: 20px;
-  text-align: right;
+  text-align: start;
   box-shadow: var(--shadow-press), 0 10px 24px rgba(36, 80, 158, 0.25);
   transition: transform 0.05s, box-shadow 0.05s;
 }
@@ -316,7 +337,12 @@ button:focus-visible {
 .continue-sub { font-size: 16px; opacity: 0.92; }
 .continue-sub .en-inline { color: #cddafd; }
 .continue-go { color: rgba(255, 255, 255, 0.75); }
-.continue-go svg { width: 28px; height: 28px; transform: scaleX(-1); }
+.continue-go svg { width: 28px; height: 28px; }
+
+/* Chevrons point "forward" in the reading direction; back points against it. */
+html[dir="rtl"] .continue-go svg,
+html[dir="rtl"] .profile-btn > .icon svg,
+html[dir="ltr"] .back-btn .icon svg { transform: scaleX(-1); }
 
 .review-chip {
   display: flex;
@@ -344,7 +370,7 @@ button:focus-visible {
   border: 1.5px solid var(--line);
   border-radius: var(--radius-lg);
   padding: 16px 18px;
-  text-align: right;
+  text-align: start;
   box-shadow: var(--shadow);
   transition: border-color 0.15s, transform 0.05s;
 }
@@ -469,7 +495,7 @@ button:focus-visible {
   border: 1.5px solid var(--line);
   border-radius: var(--radius);
   padding: 14px 18px;
-  text-align: right;
+  text-align: start;
   box-shadow: var(--shadow);
   transition: border-color 0.15s;
 }

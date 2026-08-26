@@ -7,8 +7,10 @@ import { buildLessonSession, buildReviewSession } from "./exercises";
 import { dueCards, MAX_REVIEW_SESSION } from "./srs";
 import { getCurrent } from "./store";
 import { el, clear, icon } from "./ui";
+import { t, applyDir, unitTitle } from "./i18n";
 
 async function boot(): Promise<void> {
+  applyDir();
   const root = document.getElementById("app")!;
   const res = await fetch(`${import.meta.env.BASE_URL}course.json`);
   const course: Course = await res.json();
@@ -34,7 +36,7 @@ async function boot(): Promise<void> {
           withGrammar: isFirstOfUnit,
         });
         return runSession(app, exercises, {
-          title: `${s.unit.title_fa} — درس ${idx + 1}`,
+          title: `${unitTitle(s.unit)} — ${t("lessonN", idx + 1)}`,
           completionXp: 10,
           onExit: () => app.go({ name: "unit", unit: s.unit }),
           onFinish: () => {
@@ -56,7 +58,7 @@ async function boot(): Promise<void> {
         if (due.length === 0) return renderNoReview(app);
         const exercises = buildReviewSession(course, due);
         return runSession(app, exercises, {
-          title: "مرور روزانه",
+          title: t("dailyReview"),
           completionXp: 5,
           onExit: () => app.go({ name: "home" }),
           onFinish: () => app.go({ name: "home" }),
@@ -72,11 +74,10 @@ function renderNoReview(app: App): void {
   clear(app.root);
   const wrap = el("div", { class: "done-screen" },
     el("div", { class: "done-medal calm" }, icon("sparkles")),
-    el("h1", { class: "done-title" }, "چیزی برای مرور نیست"),
-    el("div", { class: "done-sub" },
-      "فعلاً همهٔ کلمه‌ها تازه‌اند. یک درس جدید شروع کنید!"),
+    el("h1", { class: "done-title" }, t("nothingReview")),
+    el("div", { class: "done-sub" }, t("allFresh")),
   );
-  const btn = el("button", { class: "btn-primary", type: "button" }, "بازگشت");
+  const btn = el("button", { class: "btn-primary", type: "button" }, t("back"));
   btn.addEventListener("click", () => app.go({ name: "home" }));
   wrap.append(btn);
   app.root.append(wrap);
