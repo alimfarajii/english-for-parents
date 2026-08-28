@@ -11,6 +11,9 @@ import { t, applyDir, unitTitle } from "./i18n";
 
 async function boot(): Promise<void> {
   applyDir();
+  // Ask the browser not to evict our storage (progress lives in localStorage).
+  // Fire-and-forget: unsupported/denied is fine, we just lose the guarantee.
+  navigator.storage?.persist?.().catch(() => {});
   const root = document.getElementById("app")!;
   const res = await fetch(`${import.meta.env.BASE_URL}course.json`);
   const course: Course = await res.json();
