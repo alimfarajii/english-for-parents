@@ -50,9 +50,29 @@ npm run preview -- --host          # serve dist/ on the LAN for phone testing
 ```
 
 ## Deploy
-`dist/` is a fully static site — Netlify / Vercel / any static host. Have
-Mom & Dad open the URL and "Add to Home Screen". Deploying to the same
-origin that served v1 preserves their flashcard progress (auto-migration).
+Live at **https://alimfarajii.github.io/english-for-parents/** (GitHub Pages,
+repo `alimfarajii/english-for-parents`, branch `gh-pages` = contents of
+`dist/`). Redeploy after `npm run build`:
+```sh
+cd dist && git init -b gh-pages && git add -A && git commit -m deploy \
+  && git push -f https://github.com/alimfarajii/english-for-parents.git gh-pages \
+  && rm -rf .git
+```
+Have Mom & Dad open the URL in Chrome and "Add to Home Screen". The origin
+is permanent: progress is keyed to it (localStorage), so never move hosts
+casually.
+
+## Progress sync + stats (for Alim)
+The app mirrors each profile's progress + active-time to
+`server/efp-sync.mjs` (port 3468, LaunchAgent `com.alim.efp-sync`, data in
+`server/data/*.jsonl`, gitignored):
+- public ingest (parents' phones): tailscale **funnel** path
+  `/efp-sync/ingest` on `alims-macbook-pro.taila78428.ts.net`
+- private dashboard (tailnet/localhost only):
+  `https://alims-macbook-pro.taila78428.ts.net/efp-sync/` or
+  `http://localhost:3468/`
+Sync is one-way, fire-and-forget (client retries every 3 min while open),
+so the app works fine when this Mac is asleep; snapshots double as backup.
 
 ## Editing content
 Edit `NEW_WORDS` / `UNITS` in `scripts/build_course.py`, then:
