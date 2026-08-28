@@ -8,6 +8,8 @@ import { dueCards, MAX_REVIEW_SESSION } from "./srs";
 import { getCurrent } from "./store";
 import { el, clear, icon } from "./ui";
 import { t, applyDir, unitTitle } from "./i18n";
+import { startUsageTracking, logEvent } from "./usage";
+import { startSync, syncNow } from "./sync";
 
 async function boot(): Promise<void> {
   applyDir();
@@ -19,6 +21,8 @@ async function boot(): Promise<void> {
   const course: Course = await res.json();
 
   const app = new App(course, getCurrent() ?? "mom", root);
+  startUsageTracking(getCurrent);
+  startSync(getCurrent);
 
   app.render = (s: Screen) => {
     window.scrollTo(0, 0);
@@ -51,6 +55,8 @@ async function boot(): Promise<void> {
               },
             };
             app.save();
+            logEvent(app.profileId, "lesson", lesson.id);
+            void syncNow(app.profileId);
             app.go({ name: "unit", unit: s.unit });
           },
         });
@@ -64,7 +70,11 @@ async function boot(): Promise<void> {
           title: t("dailyReview"),
           completionXp: 5,
           onExit: () => app.go({ name: "home" }),
-          onFinish: () => app.go({ name: "home" }),
+          onFinish: () => {
+            logEvent(app.profileId, "review");
+            void syncNow(app.profileId);
+            app.go({ name: "home" });
+          },
         });
       }
     }
